@@ -1,6 +1,6 @@
 # Summary of Advanced Statistical Analysis 📊
 
-![Image](../Images/estadistica.jpg){ width=600 height=300 }
+![Image](../Images/estadistica.jpg)
 
 ## Overview 🌟
 This analysis provides insights into the relationships between various variables in the dataset and the diagnosis of Alzheimer's disease. We used several statistical measures, including skewness, kurtosis, and correlation coefficients (Pearson, Spearman, and Kendall), to understand the distribution and relationships of the data.
