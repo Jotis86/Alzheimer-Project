@@ -10,11 +10,6 @@
 ![GitHub stars](https://img.shields.io/github/stars/Jotis86/Alzheimer-Project?style=social)
 ![GitHub contributors](https://img.shields.io/github/contributors/Jotis86/Alzheimer-Project)
 
-## Contributors ✨
-
-- [AndreaLaHe](https://github.com/AndreaLaHe)
-- [Jotis86](https://github.com/Jotis86)
-
 ## Objectives 🎯
 The objective of this project is to develop a machine learning model to predict the probability of Alzheimer's in patients using clinical and imaging data. Additionally, we aim to create an interactive application to visualize the results and facilitate medical decision-making.
 
