@@ -1,4 +1,4 @@
-# Alzheimer Project 🧠
+# 🧠 Alzheimer AI: Detection and Support 🌸
 
 ![Image](./Images/image_2.jpeg)
 
