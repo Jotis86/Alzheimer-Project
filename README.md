@@ -1,5 +1,7 @@
 # Alzheimer Project 🧠
 
+![Image](./Images/image_2.jpeg)
+
 ## Objectives 🎯
 The objective of this project is to develop a machine learning model to predict the probability of Alzheimer's in patients using clinical and imaging data. Additionally, we aim to create an interactive application to visualize the results and facilitate medical decision-making.
 
