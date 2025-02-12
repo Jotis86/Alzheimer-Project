@@ -69,6 +69,32 @@ We evaluated each model using various metrics such as accuracy, classification r
 
 4. **ROC Curve and AUC**: Plots the true positive rate against the false positive rate and calculates the area under the curve. The ROC curve provides a visual representation of the model's performance across different thresholds, and the AUC summarizes the overall performance. 📉
 
+## Best Model 🏆
+After evaluating all the models, we selected the best one based on accuracy and other performance metrics. The best model is crucial for making accurate predictions and providing reliable results.
+
+### Best Model Details:
+1. **Model Name**: Gradient Boosting Classifier
+2. **Hyperparameters**: 
+   - `learning_rate`: 0.1
+   - `max_depth`: 4
+   - `n_estimators`: 200
+3. **Performance Metrics**:
+   - **Accuracy**: 0.944
+   - **Precision**: 
+     - Class 0: 0.95
+     - Class 1: 0.93
+   - **Recall**: 
+     - Class 0: 0.96
+     - Class 1: 0.92
+   - **F1-Score**: 
+     - Class 0: 0.96
+     - Class 1: 0.92
+   - **AUC**: 0.94
+4. **Feature Importance**: The importance of each selected feature in the best model.
+
+### Why This Model?
+The Gradient Boosting Classifier was selected because it provided the highest accuracy and balanced performance across all evaluation metrics. It effectively handles the complexity of the data and generalizes well to new, unseen data. This model will be used for making predictions on new patient data to assist in the early detection of Alzheimer's disease.
+
 ## Saving the Best Model 💾
 After evaluating all models, we selected the best one based on accuracy and saved it along with the feature selector using `joblib`. Saving the model and the feature selector allows us to easily load and use them for future predictions without retraining.
 
