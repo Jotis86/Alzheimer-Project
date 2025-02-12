@@ -3,11 +3,11 @@
 This document provides a comprehensive overview of the machine learning pipeline used to predict Alzheimer's disease. The pipeline includes data preprocessing, feature selection, model training, hyperparameter tuning, and model evaluation. We have used various machine learning models and selected the best one based on performance metrics.
 
 ## Table of Contents 📑
-1. [Data Preprocessing](#data-preprocessing-🧹)
-2. [Feature Selection](#feature-selection-🔍)
-3. [Model Training and Hyperparameter Tuning](#model-training-and-hyperparameter-tuning-🤖)
-4. [Model Evaluation](#model-evaluation-📊)
-5. [Saving the Best Model](#saving-the-best-model-💾)
+1. Data Preprocessing 🧹
+2. Feature Selection 🔍
+3. Model Training and Hyperparameter Tuning 🤖
+4. Model Evaluation 📊
+5. Saving the Best Model 💾
 
 ## Data Preprocessing 🧹
 Data preprocessing is a crucial step in the machine learning pipeline. It involves cleaning the data, handling missing values, and preparing the data for model training.
