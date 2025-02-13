@@ -42,23 +42,44 @@ test_data = pd.read_parquet(test_data_file_path)
 # Título de la aplicación
 st.title("Alzheimer Detection from MRI Scans")
 
-# Seleccionar una imagen del conjunto de datos
-image_selection = st.selectbox("Select an MRI scan image from the dataset:", test_data.index)
+# Application description
+st.markdown("""
+This application uses a deep learning model to detect the presence of Alzheimer's disease in MRI brain scan images.
+You can select an image from the test dataset, and the model will predict whether the image shows signs of Alzheimer's.
+""")
+
+# Display some sample images from the dataset
+st.header("Sample Images from the Dataset")
+sample_images = train_data.sample(4)
+cols = st.columns(2)
+for i, (index, row) in enumerate(sample_images.iterrows()):
+    image = bytes_to_image(row['image']['bytes'])
+    cols[i % 2].image(image, caption=f"Label: {class_names[row['label']]}", use_container_width=True)
+
+# Select an image from the test dataset
+st.header("Select an Image for Prediction")
+image_selection = st.selectbox("Select an MRI scan image from the test dataset:", test_data.index)
 
 if image_selection is not None:
-    # Obtener la imagen seleccionada
-    image_bytes = train_data.loc[image_selection, 'image']['bytes']
+    # Get the selected image
+    image_bytes = test_data.loc[image_selection, 'image']['bytes']
     image = bytes_to_image(image_bytes)
     
-    # Mostrar la imagen seleccionada
+    # Display the selected image
     st.image(image, caption='Selected MRI Scan.', use_container_width=True)
     
-    # Preprocesar la imagen
+    # Preprocess the image
     processed_image = preprocess_image(image)
     
-    # Hacer la predicción
+    # Make the prediction
     prediction = model.predict(processed_image)
     predicted_class = class_names[np.argmax(prediction)]
     
-    # Mostrar la predicción
-    st.write(f"Prediction: {predicted_class}")
+    # Display the prediction
+    st.subheader("Model Prediction")
+    st.write(f"The selected image has been classified as: **{predicted_class}**")
+    
+    # Display the probability of each class
+    st.subheader("Class Probabilities")
+    for i, class_name in enumerate(class_names):
+        st.write(f"{class_name}: {prediction[0][i]*100:.2f}%")
