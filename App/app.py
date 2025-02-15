@@ -143,12 +143,16 @@ elif choice == "Machine Learning":
     # Crear un formulario para la entrada de datos solo con las características seleccionadas
     st.subheader("Input Feature Values")
     input_data = {}
-    for feature in selected_features:
+    cols = st.columns(2)  # Crear dos columnas
+    for i, feature in enumerate(selected_features):
         min_val, max_val = feature_ranges[feature]
-        if feature in ['MemoryComplaints', 'BehavioralProblems']:
-            input_data[feature] = st.selectbox(f"Select value for {feature}", [0, 1])
-        else:
-            input_data[feature] = st.number_input(f"Enter value for {feature}", min_value=min_val, max_value=max_val, value=min_val)
+        with cols[i % 2]:  # Alternar entre las dos columnas
+            if feature in ['MemoryComplaints', 'BehavioralProblems']:
+                input_data[feature] = st.selectbox(f"Select value for {feature}", [0, 1])
+                
+            else:
+                input_data[feature] = st.number_input(f"Enter value for {feature}", min_value=min_val, max_value=max_val, value=min_val)
+            
 
     # Crear un DataFrame con todas las características esperadas, rellenando con valores predeterminados
     input_full_data = {feature: 0 for feature in all_features}
@@ -165,6 +169,7 @@ elif choice == "Machine Learning":
     # Hacer la predicción
     if st.button("Predict"):
         prediction = ml_model.named_steps['classifier'].predict(input_selected)
+        prediction_proba = ml_model.named_steps['classifier'].predict_proba(input_selected)
 
         # Mostrar la predicción
         st.subheader("Model Prediction")
@@ -173,6 +178,11 @@ elif choice == "Machine Learning":
             st.write(f"The input data has been classified as: **{predicted_class}** 🟢")
         else:
             st.write(f"The input data has been classified as: **{predicted_class}** 🔴")
+        
+        # Mostrar la probabilidad de cada clase
+        st.subheader("Class Probabilities")
+        for i, class_name in enumerate(ml_class_names):
+            st.write(f"{class_name}: {prediction_proba[0][i]*100:.2f}%")
 
 # Footer
 st.markdown("""
