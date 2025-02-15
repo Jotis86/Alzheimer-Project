@@ -126,14 +126,29 @@ elif choice == "Machine Learning":
         'BehavioralProblems', 'ADL'
     ]
 
+    # Definir los rangos mínimos y máximos para cada característica
+    feature_ranges = {
+        'EducationLevel': (0, 3),
+        'SleepQuality': (1, 10),
+        'SystolicBP': (90, 180),
+        'DiastolicBP': (60, 120),
+        'CholesterolHDL': (20, 100),
+        'MMSE': (0, 30),
+        'FunctionalAssessment': (0, 10),
+        'MemoryComplaints': (0, 1),
+        'BehavioralProblems': (0, 1),
+        'ADL': (0, 10)
+    }
+
     # Crear un formulario para la entrada de datos solo con las características seleccionadas
     st.subheader("Input Feature Values")
     input_data = {}
     for feature in selected_features:
+        min_val, max_val = feature_ranges[feature]
         if feature in ['MemoryComplaints', 'BehavioralProblems']:
             input_data[feature] = st.selectbox(f"Select value for {feature}", [0, 1])
         else:
-            input_data[feature] = st.number_input(f"Enter value for {feature}", value=0.0)
+            input_data[feature] = st.number_input(f"Enter value for {feature}", min_value=min_val, max_value=max_val, value=min_val)
 
     # Crear un DataFrame con todas las características esperadas, rellenando con valores predeterminados
     input_full_data = {feature: 0 for feature in all_features}
