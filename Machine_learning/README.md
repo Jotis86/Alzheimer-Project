@@ -50,12 +50,33 @@ We trained multiple machine learning models and performed hyperparameter tuning 
    - `max_depth`: Maximum depth of the individual regression estimators. We tested values [3, 4]. 🌳
 
 5. **Random Forest**:
-   - `n_estimators`: Number of trees in the forest. We tested values [100, 200]. 🌲
-   - `max_depth`: Maximum depth of the tree. We tested values [10, 20]. 🌳
-   - `min_samples_split`: Minimum number of samples required to split an internal node. We tested values [2, 5]. ✂️
+   - `n_estimators`: Number of trees in the forest. We tested values [200, 300, 500]. 🌲
+   - `max_depth`: Maximum depth of the tree. We tested values [10, 15, 20]. 🌳
+   - `min_samples_split`: Minimum number of samples required to split an internal node. We tested values [5, 10]. ✂️
+   - `min_samples_leaf`: Minimum number of samples required to be at a leaf node. We tested values [2, 4]. 🍃
+   - `class_weight`: Adjust weights for classes. We tested [None, 'balanced']. ⚖️
 
 ### Training and Tuning:
 We used `GridSearchCV` to perform hyperparameter tuning and selected the best model based on accuracy. `GridSearchCV` performs an exhaustive search over the specified parameter grid for each model, using cross-validation to evaluate the performance of each combination of parameters. 🔍
+
+### Random Forest Pipeline and Hyperparameter Tuning:
+We defined a pipeline for feature selection and the Random Forest model, and performed hyperparameter tuning using `GridSearchCV`.
+
+1. **Pipeline Definition**:
+   - **Selector**: `SelectKBest` with `f_classif` to select the top features.
+   - **Classifier**: `RandomForestClassifier` with `class_weight='balanced'` and `random_state=42`.
+
+2. **Parameter Grid**:
+   - `selector__k`: [10, 15, 20]
+   - `classifier__n_estimators`: [200, 300, 500]
+   - `classifier__max_depth`: [10, 15, 20]
+   - `classifier__min_samples_split`: [5, 10]
+   - `classifier__min_samples_leaf`: [2, 4]
+   - `classifier__class_weight`: [None, 'balanced']
+
+3. **Grid Search**:
+   - We performed a grid search with cross-validation (`cv=5`) to find the best combination of parameters.
+   - The best model was selected based on accuracy.
 
 ## Model Evaluation 📊
 We evaluated each model using various metrics such as accuracy, classification report, confusion matrix, and ROC curve. These metrics provide a comprehensive view of the model's performance and help in selecting the best model.
@@ -73,27 +94,27 @@ We evaluated each model using various metrics such as accuracy, classification r
 After evaluating all the models, we selected the best one based on accuracy and other performance metrics. The best model is crucial for making accurate predictions and providing reliable results.
 
 ### Best Model Details:
-1. **Model Name**: Gradient Boosting Classifier
+1. **Model Name**: Random Forest Classifier
 2. **Hyperparameters**: 
-   - `learning_rate`: 0.1
-   - `max_depth`: 4
    - `n_estimators`: 200
+   - `max_depth`: 20
+   - `min_samples_split`: 2
 3. **Performance Metrics**:
-   - **Accuracy**: 0.944
+   - **Accuracy**: 0.95
    - **Precision**: 
-     - Class 0: 0.95
-     - Class 1: 0.93
-   - **Recall**: 
      - Class 0: 0.96
-     - Class 1: 0.92
+     - Class 1: 0.94
+   - **Recall**: 
+     - Class 0: 0.97
+     - Class 1: 0.93
    - **F1-Score**: 
      - Class 0: 0.96
-     - Class 1: 0.92
-   - **AUC**: 0.94
+     - Class 1: 0.93
+   - **AUC**: 0.95
 4. **Feature Importance**: The importance of each selected feature in the best model.
 
 ### Why This Model?
-The Gradient Boosting Classifier was selected because it provided the highest accuracy and balanced performance across all evaluation metrics. It effectively handles the complexity of the data and generalizes well to new, unseen data. This model will be used for making predictions on new patient data to assist in the early detection of Alzheimer's disease.
+The Random Forest Classifier was selected because it provided the highest accuracy and balanced performance across all evaluation metrics. It effectively handles the complexity of the data and generalizes well to new, unseen data. This model will be used for making predictions on new patient data to assist in the early detection of Alzheimer's disease.
 
 ## Saving the Best Model 💾
 After evaluating all models, we selected the best one based on accuracy and saved it along with the feature selector using `joblib`. Saving the model and the feature selector allows us to easily load and use them for future predictions without retraining.
