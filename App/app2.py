@@ -16,6 +16,8 @@ train_data_file_path = os.path.join(base_dir, 'train.parquet')
 test_data_file_path = os.path.join(base_dir, 'test.parquet')
 ml_model_path = os.path.join(base_dir, 'best_random_forest_model.pkl')
 feature_selector_path = os.path.join(base_dir, 'feature_selector.pkl')
+navigation_image_path = os.path.join(base_dir, 'image_3.jpeg')
+home_image_path = os.path.join(base_dir, 'image_2.jpeg')
 
 # Cargar el modelo de deep learning
 dl_model = load_model(model_path)
@@ -48,11 +50,34 @@ train_data = pd.read_parquet(train_data_file_path)
 test_data = pd.read_parquet(test_data_file_path)
 
 # Título de la aplicación
-st.title("🧠 Alzheimer AI: Detection and Support")
+st.title("🧠 Alzheimer AI: Detect & Support")
 
 # Menú de navegación
+st.sidebar.image(navigation_image_path, use_container_width=True)
 menu = ["Home", "Power BI", "Machine Learning", "Deep Learning", "Chat Bot", "Other Resources"]
 choice = st.sidebar.radio("Navigate", menu)
+
+# Botón de enlace a GitHub
+st.sidebar.markdown("""
+<a href="https://github.com/Jotis86/Alzheimer-Project" target="_blank">
+    <button style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
+        GitHub Repository
+    </button>
+</a>
+""", unsafe_allow_html=True)
+
+# Tabla con los nombres de los miembros del proyecto
+st.sidebar.markdown("## Project Members")
+st.sidebar.markdown("""
+| Name           | Special Characteristic         |
+|----------------|--------------------------------|
+| [Juan Duran](https://github.com/Jotis86)     | 🌐 Skilled in Streamlit         |
+| [Andrea Lafarga](https://github.com/AndreaLaHe) | 📊 Expert in data management    |
+""", unsafe_allow_html=True)
+
+
+# Imagen principal en todas las pestañas
+st.image(home_image_path, use_container_width=True)
 
 if choice == "Home":
     st.header("Welcome to Alzheimer AI: Detection and Support")
