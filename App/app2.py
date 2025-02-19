@@ -69,10 +69,10 @@ st.sidebar.markdown("""
 # Tabla con los nombres de los miembros del proyecto
 st.sidebar.markdown("## Project Members")
 st.sidebar.markdown("""
-| Name           | Special Characteristic         |
+| Name           | Role         |
 |----------------|--------------------------------|
-| [Juan Duran](https://github.com/Jotis86)     | 🌐 Skilled in Streamlit         |
-| [Andrea Lafarga](https://github.com/AndreaLaHe) | 📊 Expert in data management    |
+| [Juan Duran](https://github.com/Jotis86)     | Data Analyst 📊     |
+| [Andrea Lafarga](https://github.com/AndreaLaHe) | Data Engineer 🛠️   |
 """, unsafe_allow_html=True)
 
 
