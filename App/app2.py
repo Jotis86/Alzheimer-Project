@@ -82,8 +82,21 @@ st.image(home_image_path, use_container_width=True)
 if choice == "Home":
     st.header("Welcome to Alzheimer AI: Detection and Support")
     st.markdown("""
-    This project aims to assist in the early detection of Alzheimer's disease using advanced machine learning and deep learning techniques.
-    Explore the different sections to learn more about the models, interact with a chat bot, and access additional resources.
+    This project aims to assist in the early detection of Alzheimer's disease using advanced machine learning and deep learning techniques. 🧠💡
+    
+    ### Objectives of the Project:
+    - **Early Detection**: Utilize state-of-the-art models to detect Alzheimer's disease at an early stage. 🕵️‍♂️
+    - **Accessibility**: Provide an easy-to-use interface for healthcare professionals and researchers. 🌐
+    - **Education**: Raise awareness and educate users about Alzheimer's disease and its early signs. 📚
+
+    ### Features of This Application:
+    - **Power BI Dashboards**: Visualize data and gain insights through interactive dashboards. 📈
+    - **Machine Learning Model**: Input various clinical and demographic features to get a prediction. 📊
+    - **Deep Learning Model**: Predict Alzheimer’s from MRI scans. 🖼️🔍
+    - **Chat Bot**: Get answers to your questions and support related to Alzheimer's disease. 💬
+    - **Additional Resources**: Access research papers, support groups, and more. 📑
+
+    Explore the different sections to learn more about the models, interact with a chat bot, and access additional resources. 🚀
     """)
 
 elif choice == "Power BI":
