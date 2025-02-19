@@ -18,6 +18,8 @@ ml_model_path = os.path.join(base_dir, 'best_random_forest_model.pkl')
 feature_selector_path = os.path.join(base_dir, 'feature_selector.pkl')
 navigation_image_path = os.path.join(base_dir, 'image_3.jpeg')
 home_image_path = os.path.join(base_dir, 'image_2.jpeg')
+ml_report_path = os.path.join(base_dir, 'ML_Report.pdf')
+dl_report_path = os.path.join(base_dir, 'DL_Report.pdf')
 
 # Cargar el modelo de deep learning
 dl_model = load_model(model_path)
@@ -114,6 +116,10 @@ elif choice == "Machine Learning":
     You can manually input the values for the selected features, and the model will predict whether the data shows signs of Alzheimer's.
     """)
 
+    # Inicializar la lista de predicciones si no existe
+    if 'predictions' not in st.session_state:
+        st.session_state['predictions'] = []
+
     # Definir todas las características esperadas
     all_features = [
         'Age', 'Gender', 'Ethnicity', 'EducationLevel', 'BMI', 'Smoking', 'AlcoholConsumption',
@@ -174,6 +180,13 @@ elif choice == "Machine Learning":
         prediction = ml_model.named_steps['classifier'].predict(input_selected)
         prediction_proba = ml_model.named_steps['classifier'].predict_proba(input_selected)
 
+        # Guardar la predicción
+        st.session_state['predictions'].append({
+            'Input Data': input_df[selected_features].to_dict(orient='records')[0],
+            'Prediction': ml_class_names[prediction[0]],
+            'Probabilities': {class_name: prediction_proba[0][i] for i, class_name in enumerate(ml_class_names)}
+        })
+
         # Mostrar la predicción
         st.subheader("Model Prediction")
         predicted_class = ml_class_names[prediction[0]]
@@ -186,6 +199,34 @@ elif choice == "Machine Learning":
         st.subheader("Class Probabilities")
         for i, class_name in enumerate(ml_class_names):
             st.write(f"{class_name}: {prediction_proba[0][i]*100:.2f}%")
+
+    # Generar el archivo CSV de predicciones
+    predictions_df = pd.DataFrame(st.session_state['predictions'])
+    csv = predictions_df.to_csv(index=False).encode('utf-8')
+
+    # Botón para descargar las predicciones
+    st.download_button(
+        label="Download Predictions as CSV",
+        data=csv,
+        file_name='predictions.csv',
+        mime='text/csv',
+    )
+
+    # Botón para resetear las predicciones
+    if st.button("Reset Predictions"):
+        st.session_state['predictions'] = []
+        st.write("Predictions have been reset.")
+
+    # Botón para descargar el informe en PDF
+    with open(ml_report_path, "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+
+    st.download_button(
+        label="Download ML Model Report",
+        data=PDFbyte,
+        file_name="ML_Model_Report.pdf",
+        mime='application/pdf',
+    )
 
 elif choice == "Deep Learning":
     st.header("Deep Learning Model")
@@ -231,6 +272,17 @@ elif choice == "Deep Learning":
         st.subheader("Class Probabilities")
         for i, class_name in enumerate(dl_class_names):
             st.write(f"{class_name}: {prediction[0][i]*100:.2f}%")
+
+    # Botón para descargar el informe en PDF
+    with open(dl_report_path, "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+
+    st.download_button(
+        label="Download DL Model Report",
+        data=PDFbyte,
+        file_name="DL_Model_Report.pdf",
+        mime='application/pdf',
+    )
 
 elif choice == "Chat Bot":
     st.header("Chat Bot")
