@@ -11,6 +11,45 @@ import joblib
 import cohere
 from dotenv import load_dotenv
 
+# Cargar las variables de entorno
+load_dotenv()
+
+# Obtener la clave API de Cohere desde la variable de entorno
+cohere_api_key = os.getenv('COHERE_API_KEY')
+
+# Inicializar el cliente de Cohere
+co = cohere.Client(cohere_api_key)
+
+# Función para obtener la respuesta del chat bot
+def get_cohere_response(prompt):
+    response = co.generate(
+        model='command-r-plus',
+        prompt=prompt,
+        max_tokens=150,
+        temperature=0.7,
+        k=0,
+        p=0.75,
+        frequency_penalty=0,
+        presence_penalty=0,
+        stop_sequences=["--"]
+    )
+    response_text = response.generations[0].text.strip()
+
+    # Verificar si la respuesta está relacionada con el Alzheimer
+    if "Alzheimer" not in response_text and "dementia" not in response_text:
+        return "Sorry, I can only answer questions related to Alzheimer's disease."
+    
+    return response_text
+
+# Prompt específico para el chat bot de Alzheimer
+def generate_prompt(user_input):
+    base_prompt = """
+    You are an AI assistant specialized in Alzheimer's disease. Answer the following questions with accurate and helpful information about Alzheimer's disease.
+    Provide concise and summarized responses within the token limit.
+    If the question is not related to Alzheimer's disease, respond with "Sorry, I can only answer questions related to Alzheimer's disease."
+    """
+    return f"{base_prompt}\n\nUser: {user_input}\nAI:"
+
 # Definir las rutas de los archivos
 base_dir = os.path.dirname(__file__)
 model_path = os.path.join(base_dir, 'alzheimer_model.h5')
@@ -292,11 +331,75 @@ elif choice == "Chat Bot":
     This section will feature a chat bot to assist users with questions and provide support related to Alzheimer's disease.
     """)
 
+    # Entrada de texto para el usuario
+    user_input = st.text_input("You: ", "")
+
+    # Inicializar bot_response
+    bot_response = ""
+
+    if user_input:
+        # Generar el prompt específico
+        prompt = generate_prompt(user_input)
+        
+        # Obtener la respuesta del chat bot
+        bot_response = get_cohere_response(prompt)
+        
+        # Mostrar la conversación en un formato más sencillo
+        st.write(f"**You:** {user_input}")
+        st.write(f"**Chat Bot:** {bot_response}")
+
 elif choice == "Other Resources":
     st.header("Other Resources")
     st.markdown("""
     Here you can find additional resources and information related to Alzheimer's disease, including research papers, support groups, and more.
     """)
+
+    # Definir las rutas de los archivos PDF
+    nutrition_guidelines_path = os.path.join(base_dir, 'Nutrition_Guidelines.pdf')
+    smoking_alzheimer_path = os.path.join(base_dir, 'Smoking_and_Alzheimer.pdf')
+    lysine_alzheimer_path = os.path.join(base_dir, 'Lysine_and_Alzheimer.pdf')
+
+    # Introducción y botón para descargar el PDF de pautas de alimentación
+    st.subheader("Nutrition Guidelines")
+    st.markdown("""
+    This document provides guidelines on nutrition and dietary habits that may help in managing and potentially reducing the risk of Alzheimer's disease.
+    """)
+    with open(nutrition_guidelines_path, "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+    st.download_button(
+        label="Download Nutrition Guidelines PDF",
+        data=PDFbyte,
+        file_name="Nutrition_Guidelines.pdf",
+        mime='application/pdf',
+    )
+
+    # Introducción y botón para descargar el PDF de la relación entre Alzheimer y fumar
+    st.subheader("Smoking and Alzheimer's Disease")
+    st.markdown("""
+    This document explores the relationship between smoking and Alzheimer's disease, discussing how smoking may impact the risk and progression of the disease.
+    """)
+    with open(smoking_alzheimer_path, "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+    st.download_button(
+        label="Download Smoking and Alzheimer PDF",
+        data=PDFbyte,
+        file_name="Smoking_and_Alzheimer.pdf",
+        mime='application/pdf',
+    )
+
+    # Introducción y botón para descargar el PDF de la relación entre Alzheimer y lisina
+    st.subheader("Lysine and Alzheimer's Disease")
+    st.markdown("""
+    This document examines the potential relationship between lysine, an essential amino acid, and Alzheimer's disease, including its possible effects on brain health.
+    """)
+    with open(lysine_alzheimer_path, "rb") as pdf_file:
+        PDFbyte = pdf_file.read()
+    st.download_button(
+        label="Download Lysine and Alzheimer PDF",
+        data=PDFbyte,
+        file_name="Lysine_and_Alzheimer.pdf",
+        mime='application/pdf',
+    )
 
 # Footer
 st.markdown("""
