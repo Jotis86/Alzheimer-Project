@@ -263,7 +263,7 @@ elif choice == "Machine Learning":
         PDFbyte = pdf_file.read()
 
     st.download_button(
-        label="Download ML Model Report",
+        label="📥 Download ML Model Report",
         data=PDFbyte,
         file_name="ML_Model_Report.pdf",
         mime='application/pdf',
@@ -319,7 +319,7 @@ elif choice == "Deep Learning":
         PDFbyte = pdf_file.read()
 
     st.download_button(
-        label="Download DL Model Report",
+        label="📥 Download DL Model Report",
         data=PDFbyte,
         file_name="DL_Model_Report.pdf",
         mime='application/pdf',
@@ -360,46 +360,47 @@ elif choice == "Other Resources":
     lysine_alzheimer_path = os.path.join(base_dir, 'Lysine_and_Alzheimer.pdf')
 
     # Introducción y botón para descargar el PDF de pautas de alimentación
-    st.subheader("Nutrition Guidelines")
+    st.subheader("🥗 Nutrition Guidelines")
     st.markdown("""
     This document provides guidelines on nutrition and dietary habits that may help in managing and potentially reducing the risk of Alzheimer's disease.
     """)
     with open(nutrition_guidelines_path, "rb") as pdf_file:
         PDFbyte = pdf_file.read()
     st.download_button(
-        label="Download Nutrition Guidelines PDF",
+        label="📥 Download Nutrition Guidelines PDF",
         data=PDFbyte,
         file_name="Nutrition_Guidelines.pdf",
         mime='application/pdf',
     )
 
     # Introducción y botón para descargar el PDF de la relación entre Alzheimer y fumar
-    st.subheader("Smoking and Alzheimer's Disease")
+    st.subheader("🚬 Smoking and Alzheimer's Disease")
     st.markdown("""
     This document explores the relationship between smoking and Alzheimer's disease, discussing how smoking may impact the risk and progression of the disease.
     """)
     with open(smoking_alzheimer_path, "rb") as pdf_file:
         PDFbyte = pdf_file.read()
     st.download_button(
-        label="Download Smoking and Alzheimer PDF",
+        label="📥 Download Smoking and Alzheimer PDF",
         data=PDFbyte,
         file_name="Smoking_and_Alzheimer.pdf",
         mime='application/pdf',
     )
 
     # Introducción y botón para descargar el PDF de la relación entre Alzheimer y lisina
-    st.subheader("Lysine and Alzheimer's Disease")
+    st.subheader("💊 Lysine and Alzheimer's Disease")
     st.markdown("""
     This document examines the potential relationship between lysine, an essential amino acid, and Alzheimer's disease, including its possible effects on brain health.
     """)
     with open(lysine_alzheimer_path, "rb") as pdf_file:
         PDFbyte = pdf_file.read()
     st.download_button(
-        label="Download Lysine and Alzheimer PDF",
+        label="📥 Download Lysine and Alzheimer PDF",
         data=PDFbyte,
         file_name="Lysine_and_Alzheimer.pdf",
         mime='application/pdf',
     )
+    
 
 # Footer
 st.markdown("""
