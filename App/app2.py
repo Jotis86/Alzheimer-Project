@@ -8,6 +8,8 @@ import cv2
 import io
 import os
 import joblib
+import cohere
+from dotenv import load_dotenv
 
 # Definir las rutas de los archivos
 base_dir = os.path.dirname(__file__)
