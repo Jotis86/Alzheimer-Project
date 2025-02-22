@@ -105,7 +105,7 @@ test_data = pd.read_parquet(test_data_file_path)
 st.title("🧠 Alzheimer AI: Detect & Support")
 
 # Menú de navegación
-#st.sidebar.image(navigation_image_path, use_container_width=True)
+st.sidebar.image(navigation_image_path, use_container_width=True)
 menu = ["Home", "Power BI", "Machine Learning", "Deep Learning", "Chat Bot", "Other Resources"]
 choice = st.sidebar.radio("Navigate", menu)
 
