@@ -53,26 +53,6 @@ def generate_prompt(user_input):
 # Definir las rutas de los archivos
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Cargar imágenes
-navigation_image_path = os.path.join(current_dir, "image_3.jpeg")
-home_image_path = os.path.join(current_dir, "image_2.jpeg")
-
-# Verificar si los archivos existen antes de intentar abrirlos
-navigation_image = None
-home_image = None
-
-if os.path.exists(navigation_image_path):
-    try:
-        navigation_image = Image.open(navigation_image_path)
-    except Exception as e:
-        print(f"Error loading navigation image: {e}")
-
-if os.path.exists(home_image_path):
-    try:
-        home_image = Image.open(home_image_path)
-    except Exception as e:
-        print(f"Error loading home image: {e}")
-
 model_path = os.path.join(current_dir, 'alzheimer_model.h5')
 train_data_file_path = os.path.join(current_dir, 'train.parquet')
 test_data_file_path = os.path.join(current_dir, 'test.parquet')
@@ -83,35 +63,14 @@ home_image_path = os.path.join(current_dir, 'image_2.jpeg')
 ml_report_path = os.path.join(current_dir, 'ML_Report.pdf')
 dl_report_path = os.path.join(current_dir, 'DL_Report.pdf')
 
-# Verificar si los archivos existen antes de continuar
-required_files = [
-    model_path, train_data_file_path, test_data_file_path,
-    ml_model_path, feature_selector_path, ml_report_path, dl_report_path
-]
-
-for file_path in required_files:
-    if not os.path.exists(file_path):
-        print(f"Required file not found: {file_path}")
-
 # Cargar el modelo de deep learning
-try:
-    dl_model = load_model(model_path)
-except Exception as e:
-    dl_model = None
-    print(f"Error loading deep learning model: {e}")
+dl_model = load_model(model_path)
 
 # Cargar el modelo de machine learning y el selector de características
-try:
-    ml_model = joblib.load(ml_model_path)
-except Exception as e:
-    ml_model = None
-    print(f"Error loading machine learning model: {e}")
+ml_model = joblib.load(ml_model_path)
+feature_selector = joblib.load(feature_selector_path)
 
-try:
-    feature_selector = joblib.load(feature_selector_path)
-except Exception as e:
-    feature_selector = None
-    print(f"Error loading feature selector: {e}")
+
 
 # Definir las clases para Deep Learning y Machine Learning
 dl_class_names = ['Non Demented', 'Very Mild Demented', 'Mild Demented', 'Moderate Demented']
