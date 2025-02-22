@@ -58,13 +58,13 @@ def generate_prompt(user_input):
 
 
 # Definir las rutas de los archivos dentro de la carpeta "App" (sin usar base_dir)
-model_path = "App/alzheimer_model.h5"
+model_path = "Deep_learning/alzheimer_model.h5"
 train_data_file_path = "App/train.parquet"
 test_data_file_path = "App/test.parquet"
 ml_model_path = "App/best_random_forest_model.pkl"
 feature_selector_path = "App/feature_selector.pkl"
-navigation_image_path = "App/image_3.jpeg"
-home_image_path = "App/image_2.jpeg"
+navigation_image_path = "Images/image_3.jpeg"
+home_image_path = "Images/image_2.jpeg"
 ml_report_path = "App/ML_Report.pdf"
 dl_report_path = "App/DL_Report.pdf"
 
