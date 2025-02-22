@@ -51,7 +51,8 @@ def generate_prompt(user_input):
     return f"{base_prompt}\n\nUser: {user_input}\nAI:"
 
 # Definir las rutas de los archivos
-base_dir = os.path.dirname(__file__)
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
 model_path = os.path.join(base_dir, 'alzheimer_model.h5')
 train_data_file_path = os.path.join(base_dir, 'train.parquet')
 test_data_file_path = os.path.join(base_dir, 'test.parquet')
