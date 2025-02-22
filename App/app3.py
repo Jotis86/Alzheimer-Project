@@ -12,11 +12,6 @@ import cohere
 from dotenv import load_dotenv
 
 
-print("Directorio actual:", os.getcwd())
-
-# Mostrar contenido del directorio
-print("Archivos en el directorio actual:", os.listdir(os.getcwd()))
-
 # Cargar las variables de entorno
 load_dotenv()
 
@@ -56,17 +51,32 @@ def generate_prompt(user_input):
     """
     return f"{base_prompt}\n\nUser: {user_input}\nAI:"
 
+# Verificar el directorio actual de trabajo
+current_dir = os.getcwd()
+print("Directorio actual:", current_dir)
 
-# Definir las rutas de los archivos dentro de la carpeta "App" (sin usar base_dir)
-model_path = "Deep_learning/alzheimer_model.h5"
-train_data_file_path = "App/train.parquet"
-test_data_file_path = "App/test.parquet"
-ml_model_path = "App/best_random_forest_model.pkl"
-feature_selector_path = "App/feature_selector.pkl"
-navigation_image_path = "Images/image_3.jpeg"
-home_image_path = "Images/image_2.jpeg"
-ml_report_path = "App/ML_Report.pdf"
-dl_report_path = "App/DL_Report.pdf"
+
+# Si el directorio actual es la raíz del proyecto, ajusta las rutas para Streamlit Cloud
+if current_dir.endswith("Alzheimer-Project"):  # Esto indica que estamos en la raíz
+    model_path = "App/alzheimer_model.h5"
+    train_data_file_path = "App/train.parquet"
+    test_data_file_path = "App/test.parquet"
+    ml_model_path = "App/best_random_forest_model.pkl"
+    feature_selector_path = "App/feature_selector.pkl"
+    navigation_image_path = "App/image_3.jpeg"
+    home_image_path = "App/image_2.jpeg"
+    ml_report_path = "App/ML_Report.pdf"
+    dl_report_path = "App/DL_Report.pdf"
+else:  # Si estamos en la carpeta 'App', ajustamos las rutas
+    model_path = "alzheimer_model.h5"
+    train_data_file_path = "train.parquet"
+    test_data_file_path = "test.parquet"
+    ml_model_path = "best_random_forest_model.pkl"
+    feature_selector_path = "feature_selector.pkl"
+    navigation_image_path = "image_3.jpeg"
+    home_image_path = "image_2.jpeg"
+    ml_report_path = "ML_Report.pdf"
+    dl_report_path = "DL_Report.pdf"
 
 # Cargar el modelo de deep learning
 dl_model = load_model(model_path)
