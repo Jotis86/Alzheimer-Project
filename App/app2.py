@@ -45,7 +45,7 @@ def get_cohere_response(prompt):
 def generate_prompt(user_input):
     base_prompt = """
     You are an AI assistant specialized in Alzheimer's disease. Answer the following questions with accurate and helpful information about Alzheimer's disease.
-    Provide concise and summarized responses within the token limit.
+    Provide concise and summarized responses within the token limit. Make sure the response is complete and does not get cut off.
     If the question is not related to Alzheimer's disease, respond with "Sorry, I can only answer questions related to Alzheimer's disease."
     """
     return f"{base_prompt}\n\nUser: {user_input}\nAI:"
