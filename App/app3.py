@@ -59,9 +59,9 @@ test_data_file_path = os.path.join(current_dir, 'test.parquet')
 ml_model_path = os.path.join(current_dir, 'best_random_forest_model.pkl')
 feature_selector_path = os.path.join(current_dir, 'feature_selector.pkl')
 navigation_image_path = os.path.join(current_dir, 'App/image_3.jpeg')
-home_image_path = os.path.join(current_dir, 'App/image_2.jpeg')
-ml_report_path = os.path.join(current_dir, 'App/ML_Report.pdf')
-dl_report_path = os.path.join(current_dir, 'App/DL_Report.pdf')
+home_image_path = os.path.join(current_dir, 'image_2.jpeg')
+ml_report_path = os.path.join(current_dir, 'ML_Report.pdf')
+dl_report_path = os.path.join(current_dir, 'DL_Report.pdf')
 
 # Cargar el modelo de deep learning
 dl_model = load_model(model_path)
