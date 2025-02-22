@@ -54,29 +54,20 @@ def generate_prompt(user_input):
 # Verificar el directorio actual de trabajo
 current_dir = os.getcwd()
 print("Directorio actual:", current_dir)
+print("Contenido del directorio 'App/':", os.listdir("App"))
+
+# Definir las rutas relativas dentro de la carpeta "App"
+model_path = os.path.join('App', 'alzheimer_model.h5')
+train_data_file_path = os.path.join('App', 'train.parquet')
+test_data_file_path = os.path.join('App', 'test.parquet')
+ml_model_path = os.path.join('App', 'best_random_forest_model.pkl')
+feature_selector_path = os.path.join('App', 'feature_selector.pkl')
+navigation_image_path = os.path.join('App', 'image_3.jpeg')
+home_image_path = os.path.join('App', 'image_2.jpeg')
+ml_report_path = os.path.join('App', 'ML_Report.pdf')
+dl_report_path = os.path.join('App', 'DL_Report.pdf')
 
 
-# Si el directorio actual es la raíz del proyecto, ajusta las rutas para Streamlit Cloud
-if current_dir.endswith("Alzheimer-Project"):  # Esto indica que estamos en la raíz
-    model_path = "App/alzheimer_model.h5"
-    train_data_file_path = "App/train.parquet"
-    test_data_file_path = "App/test.parquet"
-    ml_model_path = "App/best_random_forest_model.pkl"
-    feature_selector_path = "App/feature_selector.pkl"
-    navigation_image_path = "App/image_3.jpeg"
-    home_image_path = "App/image_2.jpeg"
-    ml_report_path = "App/ML_Report.pdf"
-    dl_report_path = "App/DL_Report.pdf"
-else:  # Si estamos en la carpeta 'App', ajustamos las rutas
-    model_path = "alzheimer_model.h5"
-    train_data_file_path = "train.parquet"
-    test_data_file_path = "test.parquet"
-    ml_model_path = "best_random_forest_model.pkl"
-    feature_selector_path = "feature_selector.pkl"
-    navigation_image_path = "image_3.jpeg"
-    home_image_path = "image_2.jpeg"
-    ml_report_path = "ML_Report.pdf"
-    dl_report_path = "DL_Report.pdf"
 
 # Cargar el modelo de deep learning
 dl_model = load_model(model_path)
