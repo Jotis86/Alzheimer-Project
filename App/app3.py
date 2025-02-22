@@ -11,6 +11,8 @@ import joblib
 import cohere
 from dotenv import load_dotenv
 
+print("Directorio actual:", os.getcwd())
+
 # Cargar las variables de entorno
 load_dotenv()
 
@@ -52,18 +54,18 @@ def generate_prompt(user_input):
 
 
 # Obtener la ruta base relativa al script actual
-base_dir = os.path.abspath(os.path.dirname(__file__))
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))  # Sube un nivel
 
 # Definir las rutas de los archivos dentro de la carpeta "App"
-model_path = os.path.join(base_dir, 'alzheimer_model.h5')
-train_data_file_path = os.path.join(base_dir, 'train.parquet')
-test_data_file_path = os.path.join(base_dir, 'test.parquet')
-ml_model_path = os.path.join(base_dir, 'best_random_forest_model.pkl')
-feature_selector_path = os.path.join(base_dir, 'feature_selector.pkl')
-navigation_image_path = os.path.join(base_dir, 'image_3.jpeg')
-home_image_path = os.path.join(base_dir, 'image_2.jpeg')
-ml_report_path = os.path.join(base_dir, 'ML_Report.pdf')
-dl_report_path = os.path.join(base_dir, 'DL_Report.pdf')
+model_path = os.path.join(base_dir, 'App', 'alzheimer_model.h5')
+train_data_file_path = os.path.join(base_dir, 'App', 'train.parquet')
+test_data_file_path = os.path.join(base_dir, 'App', 'test.parquet')
+ml_model_path = os.path.join(base_dir, 'App', 'best_random_forest_model.pkl')
+feature_selector_path = os.path.join(base_dir, 'App', 'feature_selector.pkl')
+navigation_image_path = os.path.join(base_dir, 'App', 'image_3.jpeg')
+home_image_path = os.path.join(base_dir, 'App', 'image_2.jpeg')
+ml_report_path = os.path.join(base_dir, 'App', 'ML_Report.pdf')
+dl_report_path = os.path.join(base_dir, 'App', 'DL_Report.pdf')
 
 # Cargar el modelo de deep learning
 dl_model = load_model(model_path)
