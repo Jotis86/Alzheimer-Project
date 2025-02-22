@@ -362,9 +362,9 @@ elif choice == "Other Resources":
     """)
 
      # Definir las rutas de los archivos PDF
-    nutrition_guidelines_path = 'Nutrition_Guidelines.pdf'
-    smoking_alzheimer_path = 'Smoking_and_Alzheimer.pdf'
-    lysine_alzheimer_path = 'Lysine_and_Alzheimer.pdf'
+    nutrition_guidelines_path = os.path.join(base_dir,'App', 'Nutrition_Guidelines.pdf')
+    smoking_alzheimer_path = os.path.join(base_dir,'App', 'Smoking_and_Alzheimer.pdf')
+    lysine_alzheimer_path = os.path.join(base_dir, 'App','Lysine_and_Alzheimer.pdf')
 
     # Introducción y botón para descargar el PDF de pautas de alimentación
     st.subheader("🥗 Nutrition Guidelines")
