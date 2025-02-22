@@ -7,3 +7,4 @@ opencv-python-headless
 joblib
 cohere
 python-dotenv
+scikit-learn
