@@ -51,17 +51,23 @@ def generate_prompt(user_input):
     return f"{base_prompt}\n\nUser: {user_input}\nAI:"
 
 # Definir las rutas de los archivos
-base_dir = os.path.dirname(os.path.abspath(__file__))
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
-model_path = os.path.join(base_dir, 'alzheimer_model.h5')
-train_data_file_path = os.path.join(base_dir, 'train.parquet')
-test_data_file_path = os.path.join(base_dir, 'test.parquet')
-ml_model_path = os.path.join(base_dir, 'best_random_forest_model.pkl')
-feature_selector_path = os.path.join(base_dir, 'feature_selector.pkl')
-navigation_image_path = os.path.join(base_dir, 'image_3.jpeg')
-home_image_path = os.path.join(base_dir, 'image_2.jpeg')
-ml_report_path = os.path.join(base_dir, 'ML_Report.pdf')
-dl_report_path = os.path.join(base_dir, 'DL_Report.pdf')
+# Cargar imágenes
+navigation_image_path = os.path.join(current_dir, "image_3.jpeg")
+home_image_path = os.path.join(current_dir, "image_2.jpeg")
+navigation_image = Image.open(navigation_image_path)
+home_image = Image.open(home_image_path)
+
+model_path = os.path.join(current_dir, 'alzheimer_model.h5')
+train_data_file_path = os.path.join(current_dir, 'train.parquet')
+test_data_file_path = os.path.join(current_dir, 'test.parquet')
+ml_model_path = os.path.join(current_dir, 'best_random_forest_model.pkl')
+feature_selector_path = os.path.join(current_dir, 'feature_selector.pkl')
+navigation_image_path = os.path.join(current_dir, 'image_3.jpeg')
+home_image_path = os.path.join(current_dir, 'image_2.jpeg')
+ml_report_path = os.path.join(current_dir, 'ML_Report.pdf')
+dl_report_path = os.path.join(current_dir, 'DL_Report.pdf')
 
 # Cargar el modelo de deep learning
 dl_model = load_model(model_path)
@@ -356,9 +362,9 @@ elif choice == "Other Resources":
     """)
 
     # Definir las rutas de los archivos PDF
-    nutrition_guidelines_path = os.path.join(base_dir, 'Nutrition_Guidelines.pdf')
-    smoking_alzheimer_path = os.path.join(base_dir, 'Smoking_and_Alzheimer.pdf')
-    lysine_alzheimer_path = os.path.join(base_dir, 'Lysine_and_Alzheimer.pdf')
+    nutrition_guidelines_path = os.path.join(current_dir, 'Nutrition_Guidelines.pdf')
+    smoking_alzheimer_path = os.path.join(current_dir, 'Smoking_and_Alzheimer.pdf')
+    lysine_alzheimer_path = os.path.join(current_dir, 'Lysine_and_Alzheimer.pdf')
 
     # Introducción y botón para descargar el PDF de pautas de alimentación
     st.subheader("🥗 Nutrition Guidelines")
