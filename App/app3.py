@@ -53,15 +53,15 @@ def generate_prompt(user_input):
 # Definir las rutas de los archivos
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-model_path = os.path.join('alzheimer_model.h5')
-train_data_file_path = os.path.join('train.parquet')
-test_data_file_path = os.path.join('test.parquet')
-ml_model_path = os.path.join('best_random_forest_model.pkl')
-feature_selector_path = os.path.join('feature_selector.pkl')
-navigation_image_path = os.path.join('image_3.jpg')
-home_image_path = os.path.join('image_2.jpg')
-ml_report_path = os.path.join('ML_Report.pdf')
-dl_report_path = os.path.join('DL_Report.pdf')
+model_path = os.path.join(current_dir,'alzheimer_model.h5')
+train_data_file_path = os.path.join(current_dir,'train.parquet')
+test_data_file_path = os.path.join(current_dir,'test.parquet')
+ml_model_path = os.path.join(current_dir,'best_random_forest_model.pkl')
+feature_selector_path = os.path.join(current_dir,'feature_selector.pkl')
+navigation_image_path = os.path.join(current_dir,'image_3.jpg')
+home_image_path = os.path.join(current_dir,'image_2.jpg')
+ml_report_path = os.path.join(current_dir,'ML_Report.pdf')
+dl_report_path = os.path.join(current_dir,'DL_Report.pdf')
 
 # Cargar el modelo de deep learning
 dl_model = load_model(model_path)
