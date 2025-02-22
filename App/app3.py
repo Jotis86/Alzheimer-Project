@@ -11,7 +11,11 @@ import joblib
 import cohere
 from dotenv import load_dotenv
 
+
 print("Directorio actual:", os.getcwd())
+
+# Mostrar contenido del directorio
+print("Archivos en el directorio actual:", os.listdir(os.getcwd()))
 
 # Cargar las variables de entorno
 load_dotenv()
@@ -53,19 +57,16 @@ def generate_prompt(user_input):
     return f"{base_prompt}\n\nUser: {user_input}\nAI:"
 
 
-# Obtener la ruta base relativa al script actual
-base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))  # Sube un nivel
-
-# Definir las rutas de los archivos dentro de la carpeta "App"
-model_path = os.path.join(base_dir, 'App', 'alzheimer_model.h5')
-train_data_file_path = os.path.join(base_dir, 'App', 'train.parquet')
-test_data_file_path = os.path.join(base_dir, 'App', 'test.parquet')
-ml_model_path = os.path.join(base_dir, 'App', 'best_random_forest_model.pkl')
-feature_selector_path = os.path.join(base_dir, 'App', 'feature_selector.pkl')
-navigation_image_path = os.path.join(base_dir, 'App', 'image_3.jpeg')
-home_image_path = os.path.join(base_dir, 'App', 'image_2.jpeg')
-ml_report_path = os.path.join(base_dir, 'App', 'ML_Report.pdf')
-dl_report_path = os.path.join(base_dir, 'App', 'DL_Report.pdf')
+# Definir las rutas de los archivos dentro de la carpeta "App" (sin usar base_dir)
+model_path = "App/alzheimer_model.h5"
+train_data_file_path = "App/train.parquet"
+test_data_file_path = "App/test.parquet"
+ml_model_path = "App/best_random_forest_model.pkl"
+feature_selector_path = "App/feature_selector.pkl"
+navigation_image_path = "App/image_3.jpeg"
+home_image_path = "App/image_2.jpeg"
+ml_report_path = "App/ML_Report.pdf"
+dl_report_path = "App/DL_Report.pdf"
 
 # Cargar el modelo de deep learning
 dl_model = load_model(model_path)
@@ -362,9 +363,9 @@ elif choice == "Other Resources":
     """)
 
      # Definir las rutas de los archivos PDF
-    nutrition_guidelines_path = os.path.join(base_dir,'App', 'Nutrition_Guidelines.pdf')
-    smoking_alzheimer_path = os.path.join(base_dir,'App', 'Smoking_and_Alzheimer.pdf')
-    lysine_alzheimer_path = os.path.join(base_dir, 'App','Lysine_and_Alzheimer.pdf')
+    nutrition_guidelines_path = ('App/Nutrition_Guidelines.pdf')
+    smoking_alzheimer_path = ('App/Smoking_and_Alzheimer.pdf')
+    lysine_alzheimer_path = ('App/Lysine_and_Alzheimer.pdf')
 
     # Introducción y botón para descargar el PDF de pautas de alimentación
     st.subheader("🥗 Nutrition Guidelines")
