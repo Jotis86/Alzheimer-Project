@@ -51,15 +51,19 @@ def generate_prompt(user_input):
     return f"{base_prompt}\n\nUser: {user_input}\nAI:"
 
 
-model_path = 'alzheimer_model.h5'
-train_data_file_path = 'train.parquet'
-test_data_file_path = 'test.parquet'
-ml_model_path = 'best_random_forest_model.pkl'
-feature_selector_path = 'feature_selector.pkl'
-navigation_image_path = 'image_3.jpeg'
-home_image_path = 'image_2.jpeg'
-ml_report_path = 'ML_Report.pdf'
-dl_report_path = 'DL_Report.pdf'
+# Obtener la ruta base relativa al script actual
+base_dir = os.path.abspath(os.path.dirname(__file__))
+
+# Definir las rutas de los archivos dentro de la carpeta "App"
+model_path = os.path.join(base_dir, 'alzheimer_model.h5')
+train_data_file_path = os.path.join(base_dir, 'train.parquet')
+test_data_file_path = os.path.join(base_dir, 'test.parquet')
+ml_model_path = os.path.join(base_dir, 'best_random_forest_model.pkl')
+feature_selector_path = os.path.join(base_dir, 'feature_selector.pkl')
+navigation_image_path = os.path.join(base_dir, 'image_3.jpeg')
+home_image_path = os.path.join(base_dir, 'image_2.jpeg')
+ml_report_path = os.path.join(base_dir, 'ML_Report.pdf')
+dl_report_path = os.path.join(base_dir, 'DL_Report.pdf')
 
 # Cargar el modelo de deep learning
 dl_model = load_model(model_path)
