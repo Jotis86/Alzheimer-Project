@@ -53,11 +53,11 @@ def generate_prompt(user_input):
 # Definir las rutas de los archivos
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-model_path = os.path.join(current_dir, 'App/alzheimer_model.h5')
-train_data_file_path = os.path.join(current_dir, 'App/train.parquet')
-test_data_file_path = os.path.join(current_dir, 'App/test.parquet')
-ml_model_path = os.path.join(current_dir, 'App/best_random_forest_model.pkl')
-feature_selector_path = os.path.join(current_dir, 'App/feature_selector.pkl')
+model_path = os.path.join(current_dir, 'alzheimer_model.h5')
+train_data_file_path = os.path.join(current_dir, 'train.parquet')
+test_data_file_path = os.path.join(current_dir, 'test.parquet')
+ml_model_path = os.path.join(current_dir, 'best_random_forest_model.pkl')
+feature_selector_path = os.path.join(current_dir, 'feature_selector.pkl')
 navigation_image_path = os.path.join(current_dir, 'App/image_3.jpeg')
 home_image_path = os.path.join(current_dir, 'App/image_2.jpeg')
 ml_report_path = os.path.join(current_dir, 'App/ML_Report.pdf')
