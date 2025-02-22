@@ -56,8 +56,19 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 # Cargar imágenes
 navigation_image_path = os.path.join(current_dir, "image_3.jpeg")
 home_image_path = os.path.join(current_dir, "image_2.jpeg")
-navigation_image = Image.open(navigation_image_path)
-home_image = Image.open(home_image_path)
+
+# Verificar si los archivos existen antes de intentar abrirlos
+try:
+    navigation_image = Image.open(navigation_image_path)
+except FileNotFoundError:
+    navigation_image = None
+    print(f"Navigation image not found at {navigation_image_path}")
+
+try:
+    home_image = Image.open(home_image_path)
+except FileNotFoundError:
+    home_image = None
+    print(f"Home image not found at {home_image_path}")
 
 model_path = os.path.join(current_dir, 'alzheimer_model.h5')
 train_data_file_path = os.path.join(current_dir, 'train.parquet')
