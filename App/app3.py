@@ -162,8 +162,36 @@ elif choice == "Machine Learning":
 
     # Application description
     st.markdown("""
+    This dataset contains extensive health information for 2,149 patients. The dataset includes demographic details, lifestyle factors, medical history, clinical measurements, cognitive and functional assessments, symptoms, and a diagnosis of Alzheimer's Disease.
+
     This application uses a machine learning model to detect the presence of Alzheimer's disease based on various features.
     You can manually input the values for the selected features, and the model will predict whether the data shows signs of Alzheimer's.
+    """)
+
+    st.markdown("""
+    **EducationLevel**: The education level of the patients, coded as follows:
+    - 0: None
+    - 1: High School
+    - 2: Bachelor's
+    - 3: Higher
+
+    **SleepQuality**: Sleep quality score, ranging from 1 to 10.
+
+    **SystolicBP**: Systolic blood pressure, ranging from 90 to 180 mmHg.
+
+    **DiastolicBP**: Diastolic blood pressure, ranging from 60 to 120 mmHg.
+
+    **CholesterolHDL**: High-density lipoprotein cholesterol levels, ranging from 20 to 100 mg/dL.
+
+    **MMSE**: Mini-Mental State Examination score, ranging from 0 to 30. Lower scores indicate cognitive impairment.
+
+    **FunctionalAssessment**: Functional assessment score, ranging from 0 to 10. Lower scores indicate greater impairment.
+
+    **MemoryComplaints**: Presence of memory complaints, where 0 indicates No and 1 indicates Yes.
+
+    **BehavioralProblems**: Presence of behavioral problems, where 0 indicates No and 1 indicates Yes.
+
+    **ADL**: Activities of Daily Living score, ranging from 0 to 10. Lower scores indicate greater impairment.
     """)
 
     # Inicializar la lista de predicciones si no existe
