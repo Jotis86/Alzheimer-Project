@@ -43,35 +43,49 @@ By combining these components, we aim to provide a robust tool for the early det
 
 ## Development Process 🏗️
 1. **📥 Data Collection**: 
-   - Obtaining clinical and imaging data from patients.
-   - Sources include medical records, MRI scans, and patient surveys.
+    - Obtaining clinical and imaging data from patients.
+    - Sources include medical records, MRI scans, and patient surveys.
 
 2. **🧹 Data Preprocessing**: 
-   - Cleaning and transforming the data to ensure quality and consistency.
-   - Handling missing values, normalizing data, and encoding categorical variables.
+    - Cleaning and transforming the data to ensure quality and consistency.
+    - Handling missing values, normalizing data, and encoding categorical variables.
 
 3. **🔍 Exploratory Data Analysis (EDA)**: 
-   - Identifying patterns and relationships in the data.
-   - Visualizing data distributions, correlations, and trends using tools like Matplotlib and Seaborn.
+    - Identifying patterns and relationships in the data.
+    - Visualizing data distributions, correlations, and trends using tools like Matplotlib and Seaborn.
 
 4. **🤖 Model Development**: 
-   - Training and evaluating machine learning models using Scikit-learn.
-   - Developing deep learning models using TensorFlow for image classification.
-   - Hyperparameter tuning and model optimization to improve performance.
+    - Training and evaluating machine learning models using Scikit-learn.
+    - Developing deep learning models using TensorFlow for image classification.
+    - Hyperparameter tuning and model optimization to improve performance.
 
 5. **🚀 Application Deployment**: 
-   - Creating an interactive web application with Streamlit to visualize results and facilitate medical decision-making.
-   - Integrating machine learning and deep learning models into the application.
-   - Implementing a chat bot using Cohere for natural language processing.
+    - Creating an interactive web application with Streamlit to visualize results and facilitate medical decision-making.
+    - Integrating machine learning and deep learning models into the application.
+    - Implementing a chat bot using Cohere for natural language processing.
 
 6. **📊 Data Visualization**: 
-   - Using PowerBI for advanced visualizations and dashboards.
-   - Creating interactive reports to provide insights and support decision-making.
+    - Using PowerBI for advanced visualizations and dashboards.
+    - Creating interactive reports to provide insights and support decision-making.
 
 7. **🗣️ Voice Assistant Integration**: 
-   - Developing an Alexa skill to assist both users and caregivers in their daily routines.
-   - Training the skill to provide information and support related to Alzheimer's disease.
+    - Developing an Alexa skill to assist both users and caregivers in their daily routines.
+    - Training the skill to provide information and support related to Alzheimer's disease.
 
 8. **🔄 Continuous Improvement**: 
-   - Collecting feedback from users and stakeholders to improve the application.
-   - Iteratively refining models and visualizations based on new data and insights.
+    - Collecting feedback from users and stakeholders to improve the application.
+    - Iteratively refining models and visualizations based on new data and insights.
+
+
+## Python Visualizations 📈
+We created various visualizations using Python to explore and present the data. These visualizations helped us understand the data better and communicate our findings effectively.
+- [Python Visualizations](https://github.com/Jotis86/Alzheimer-Project/tree/main/Data_visualization)
+
+## Statistical Analysis 📊
+We conducted extensive statistical analysis to identify significant patterns and relationships in the data. This analysis provided valuable insights that informed our model development and decision-making processes.
+- [Statistical Analysis](https://github.com/Jotis86/Alzheimer-Project/tree/main/Statistics)
+
+## Project Management with Trello 📋
+We used Trello for project management to keep track of tasks, milestones, and deadlines. The Trello board helped us organize our workflow and collaborate effectively as a team.
+- [Trello Board](https://github.com/Jotis86/Alzheimer-Project/tree/main/Project_Management)
+![Trello Board Image](./Images/trello.png)
