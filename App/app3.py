@@ -315,6 +315,27 @@ elif choice == "Deep Learning":
     You can select an image from the test dataset, and the model will predict whether the image shows signs of Alzheimer's.
     """)
 
+    st.markdown("""
+    This dataset focuses on the classification of Alzheimer's disease based on MRI scans. The dataset consists of brain MRI images labeled into four categories:
+
+    - '0': Mild_Demented
+    - '1': Moderate_Demented
+    - '2': Non_Demented
+    - '3': Very_Mild_Demented
+
+    **Number of examples:**
+    - Train: 5,120
+    - Test: 1,280
+
+    **Dataset Details:**
+    - **Mild_Demented**: These images show mild signs of dementia.
+    - **Moderate_Demented**: These images show moderate signs of dementia.
+    - **Non_Demented**: These images do not show signs of dementia.
+    - **Very_Mild_Demented**: These images show very mild signs of dementia.
+
+    The dataset is used to train and evaluate the deep learning model, which aims to classify the MRI images into one of the four categories mentioned above. This helps in the early detection and diagnosis of Alzheimer's disease, providing valuable insights for medical professionals.
+    """)
+
     # Display some sample images from the dataset
     st.header("Sample Images from the Dataset")
     sample_images = train_data.sample(4)
