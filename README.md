@@ -102,7 +102,30 @@ We developed machine learning models to predict the probability of Alzheimer's d
 
 We developed deep learning models to detect the presence of Alzheimer's disease in MRI brain scan images. These models were built and trained using TensorFlow, and they aim to classify MRI images into different categories of dementia. For more details and the code, please visit our [Deep Learning section](https://github.com/Jotis86/Alzheimer-Project/tree/main/Deep_learning).
 
+## 👥 Project Members
 
+| Name           | Role          | Special Characteristic       | GitHub Profile |
+|----------------|---------------|------------------------------|----------------|
+| Juan Duran     | 🧑‍💻 Data Analyst | 🌐 Skilled in Streamlit       | [Juan Duran](https://github.com/Jotis86) |
+| Andrea Lafarga | 🔧 Data Engineer | 📊 Expert in data management  | [Andrea Lafarga](https://github.com/AndreaLafarga) |
+
+## 🤝 Collaborations and Suggestions
+
+We welcome collaborations and suggestions! Feel free to open an issue or submit a pull request. 🚀
+
+Thank you for taking the time to explore our project. We hope you find it useful and informative. Your feedback and contributions are invaluable to us, and we look forward to working together to improve and expand this project. 🙌
+
+## License 📄
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Jotis86/Alzheimer-Project/blob/main/LICENSE) file for more details.
+
+---
+
+Thank you for visiting our repository! If you have any questions or need further assistance, please don't hesitate to reach out. Happy coding! 😊
+
+<br>
+
+<img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif"/>
 
 
 
