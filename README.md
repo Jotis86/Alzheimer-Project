@@ -80,16 +80,27 @@ By combining these components, we aim to provide a robust tool for the early det
 ## Project Management with Trello 📋
 We used [Trello](https://trello.com/b/your-trello-board-link) for project management to keep track of tasks, milestones, and deadlines. The Trello board helped us organize our workflow and collaborate effectively as a team.
 
+<br>
+
 ![Trello Board Image](./Images/trello.png)
 
 
 ## Python Visualizations 📈
-We created various visualizations using Python to explore and present the data. These visualizations helped us understand the data better and communicate our findings effectively. You can view the visualizations in our [Python Visualizations repository](https://github.com/Jotis86/Alzheimer-Project/tree/main/Data_visualization).
+We created various visualizations using Python to explore and present the data. These visualizations helped us understand the data better and communicate our findings effectively. You can view the visualizations [here](https://github.com/Jotis86/Alzheimer-Project/tree/main/Data_visualization).
 
 
 ## Statistical Analysis 📊
-We conducted extensive statistical analysis to identify significant patterns and relationships in the data. This analysis provided valuable insights that informed our model development and decision-making processes. The detailed analysis can be found in our [Statistical Analysis repository](https://github.com/Jotis86/Alzheimer-Project/tree/main/Statistics).
+We conducted extensive statistical analysis to identify significant patterns and relationships in the data. This analysis provided valuable insights that informed our model development and decision-making processes. The detailed analysis can be found [here](https://github.com/Jotis86/Alzheimer-Project/tree/main/Statistics).
 
+## 📊 PowerBI
+
+## Machine Learning Models 🤖
+
+We developed machine learning models to predict the probability of Alzheimer's disease based on clinical data. These models were trained and evaluated using Scikit-learn, and their performance was optimized through hyperparameter tuning. Detailed information and the code for these models can be accessed in our [Machine Learning section](https://github.com/Jotis86/Alzheimer-Project/tree/main/Machine_learning).
+
+## Deep Learning Models 🧠
+
+We developed deep learning models to detect the presence of Alzheimer's disease in MRI brain scan images. These models were built and trained using TensorFlow, and they aim to classify MRI images into different categories of dementia. For more details and the code, please visit our [Deep Learning section](https://github.com/Jotis86/Alzheimer-Project/tree/main/Deep_learning).
 
 
 
