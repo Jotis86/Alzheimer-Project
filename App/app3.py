@@ -154,11 +154,22 @@ if choice == "Home":
 elif choice == "Power BI":
     st.header("Power BI")
     st.markdown("""
-    This section will feature Power BI dashboards and reports to provide insights and visualizations related to Alzheimer's disease.
+    This section features Power BI dashboards and reports to provide insights and visualizations related to Alzheimer's disease.
+    
+    Power BI is a powerful data visualization tool that allows us to create interactive and shareable dashboards. In this section, you will find various dashboards that present key metrics and trends related to Alzheimer's disease. These visualizations help in understanding the data better and making informed decisions.
+    
+    The dashboards are divided into three main tabs:
+    - **Lifestyle Analysis**: Visualizations showing the impact of lifestyle factors such as diet, exercise, and sleep on Alzheimer's disease.
+    - **Medical Analysis**: Charts and graphs depicting medical assessments, including blood pressure, cholesterol levels, and other clinical measurements.
+    - **Functional and Cognitive Analysis**: Visual representations of cognitive and functional assessments, highlighting patterns and anomalies associated with different stages of Alzheimer's.
+    
+    Explore the dashboards to gain deeper insights into the data and uncover trends that can aid in the early detection and management of Alzheimer's disease.
     """)
 
     # Definir las rutas relativas dentro de la carpeta "App"
     video = os.path.join('Power_BI', '2025-03-02 19-23-46.mp4')
+    archivo = os.path.join('Power_BI', 'Alzheimer_Dashboard.pbix')
+            
 
     # Reproducir el video de Power BI
     st.video(video)
