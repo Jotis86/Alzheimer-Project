@@ -169,6 +169,14 @@ elif choice == "Power BI":
     # Definir las rutas relativas dentro de la carpeta "App"
     video = os.path.join('Power_BI', '2025-03-02 19-23-46.mp4')
     archivo = os.path.join('Power_BI', 'Alzheimer_Dashboard.pbix')
+
+    # Botón para descargar el archivo de Power BI
+    st.markdown("""
+    ### Download the Power BI Dashboard
+    """)
+    st.markdown("""
+    [Download Power BI Dashboard](Power_BI/Alzheimer_Dashboard.pbix)
+    """)
             
 
     # Reproducir el video de Power BI
