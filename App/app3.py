@@ -157,6 +157,12 @@ elif choice == "Power BI":
     This section will feature Power BI dashboards and reports to provide insights and visualizations related to Alzheimer's disease.
     """)
 
+    # Definir las rutas relativas dentro de la carpeta "App"
+    video = os.path.join('Power_BI', '2025-03-02 19-23-46.mp4')
+
+    # Reproducir el video de Power BI
+    st.video(video)
+
 elif choice == "Machine Learning":
     st.header("Machine Learning Model")
 
@@ -412,7 +418,7 @@ elif choice == "Other Resources":
     Here you can find additional resources and information related to Alzheimer's disease, including research papers, support groups, and more.
     """)
 
-     # Definir las rutas de los archivos PDF
+    # Definir las rutas de los archivos PDF
     nutrition_guidelines_path = ('App/Nutrition_Guidelines.pdf')
     smoking_alzheimer_path = ('App/Smoking_and_Alzheimer.pdf')
     lysine_alzheimer_path = ('App/Lysine_and_Alzheimer.pdf')
