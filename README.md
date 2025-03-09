@@ -93,6 +93,29 @@ We created various visualizations using Python to explore and present the data. 
 We conducted extensive statistical analysis to identify significant patterns and relationships in the data. This analysis provided valuable insights that informed our model development and decision-making processes. The detailed analysis can be found [here](https://github.com/Jotis86/Alzheimer-Project/tree/main/Statistics).
 
 ## 📊 PowerBI
+In this project, we utilized Power BI to create advanced visualizations and interactive dashboards that provide insights into Alzheimer's disease. Power BI is a powerful data visualization tool that allows us to create interactive and shareable dashboards, making it easier to understand complex data and make informed decisions.
+
+### Key Dashboards:
+
+1. **Lifestyle Analysis**:
+   - Visualizations showing the impact of lifestyle factors such as diet, exercise, and sleep on Alzheimer's disease.
+   - Helps in understanding how lifestyle choices can influence the risk and progression of the disease.
+
+2. **Medical Analysis**:
+   - Charts and graphs depicting medical assessments, including blood pressure, cholesterol levels, and other clinical measurements.
+   - Provides insights into the medical factors associated with Alzheimer's disease.
+
+3. **Functional and Cognitive Analysis**:
+   - Visual representations of cognitive and functional assessments, highlighting patterns and anomalies associated with different stages of Alzheimer's.
+   - Aids in identifying cognitive and functional decline in patients.
+
+### Download the Power BI Dashboard:
+
+You can download the Power BI dashboard used in this project to explore the data and visualizations in more detail. The dashboard is available in `.pbix` format, which can be opened with Power BI Desktop.
+
+- [Download Power BI Dashboard](https://github.com/Jotis86/Alzheimer-Project/blob/main/Power_BI/Alzheimer_Dashboard.pbix)
+
+By using these dashboards, researchers and healthcare professionals can gain deeper insights into the data, uncover trends, and make data-driven decisions to improve the early detection and management of Alzheimer's disease.
 
 ## Machine Learning Models 🤖
 
@@ -101,6 +124,17 @@ We developed machine learning models to predict the probability of Alzheimer's d
 ## Deep Learning Models 🧠
 
 We developed deep learning models to detect the presence of Alzheimer's disease in MRI brain scan images. These models were built and trained using TensorFlow, and they aim to classify MRI images into different categories of dementia. For more details and the code, please visit our [Deep Learning section](https://github.com/Jotis86/Alzheimer-Project/tree/main/Deep_learning).
+
+## Streamlit 🌐
+We used Streamlit to develop an interactive web application that integrates our machine learning and deep learning models. Streamlit allows us to create a user-friendly interface for visualizing results and facilitating medical decision-making.
+
+### Key Features:
+- **Interactive Predictions**: Users can input clinical data or select MRI images to get predictions from the machine learning and deep learning models.
+- **Visualization of Results**: The application provides visualizations of the model predictions and class probabilities.
+- **Chat Bot Integration**: A chat bot is integrated into the application to assist users with questions related to Alzheimer's disease.
+- **Downloadable Reports**: Users can download detailed reports of the model predictions and analyses in PDF format.
+
+You can access the Streamlit application [here](https://alzheimer-project-tumg7mq7wjzzwdxwtpxdno.streamlit.app).
 
 ## 👥 Project Members
 
