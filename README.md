@@ -134,7 +134,7 @@ We used Streamlit to develop an interactive web application that integrates our 
 - **Chat Bot Integration**: A chat bot is integrated into the application to assist users with questions related to Alzheimer's disease.
 - **Downloadable Reports**: Users can download detailed reports of the model predictions and analyses in PDF format.
 
-You can access the Streamlit application [here](https://alzheimer-project-tumg7mq7wjzzwdxwtpxdno.streamlit.app).
+You can access the Streamlit application [here](https://memoria-activa.streamlit.app).
 
 ## 👥 Project Members
 
