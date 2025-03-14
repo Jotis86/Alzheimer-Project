@@ -6,7 +6,6 @@
 ![GitHub forks](https://img.shields.io/github/forks/Jotis86/Alzheimer-Project?style=social)
 ![GitHub issues](https://img.shields.io/github/issues/Jotis86/Alzheimer-Project)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/Jotis86/Alzheimer-Project)
-![GitHub license](https://img.shields.io/github/license/Jotis86/Alzheimer-Project)
 ![GitHub stars](https://img.shields.io/github/stars/Jotis86/Alzheimer-Project?style=social)
 ![GitHub contributors](https://img.shields.io/github/contributors/Jotis86/Alzheimer-Project)
 
