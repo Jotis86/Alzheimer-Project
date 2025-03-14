@@ -115,6 +115,10 @@ You can download the Power BI dashboard used in this project to explore the data
 
 - [Download Power BI Dashboard](https://github.com/Jotis86/Alzheimer-Project/blob/main/Power_BI/Alzheimer_Dashboard.pbix)
 
+### Watch the Power BI Dashboard Video:
+
+For a demonstration of the Power BI dashboard, you can watch the video [here](https://drive.google.com/file/d/1kjlJ5bjxgS4iml74uasT7wd_T-jCdjax/view?usp=sharing).
+
 By using these dashboards, researchers and healthcare professionals can gain deeper insights into the data, uncover trends, and make data-driven decisions to improve the early detection and management of Alzheimer's disease.
 
 ## Machine Learning Models 🤖
@@ -135,6 +139,8 @@ We used Streamlit to develop an interactive web application that integrates our 
 - **Downloadable Reports**: Users can download detailed reports of the model predictions and analyses in PDF format.
 
 You can access the Streamlit application [here](https://memoria-activa.streamlit.app).
+
+For a demonstration of the application, you can watch the video demo [here](https://drive.google.com/file/d/1r38C5YPgF0mBqmIC1A48Xf3CROW9vCIf/view?usp=sharing).
 
 ## Alexa Skill Assistant 🗣️
 
