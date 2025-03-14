@@ -136,6 +136,20 @@ We used Streamlit to develop an interactive web application that integrates our 
 
 You can access the Streamlit application [here](https://alzheimer-project-tumg7mq7wjzzwdxwtpxdno.streamlit.app).
 
+## Alexa Skill Assistant 🗣️
+
+We developed an Alexa skill to assist both users and caregivers in their daily routines. This skill provides valuable information and support related to Alzheimer's disease, making it easier for users to manage their condition and for caregivers to provide effective care.
+
+### Key Features:
+- **Create, Consult, and Delete Reminders**: Users can create, consult, and delete reminders for medication, appointments, and other important tasks.
+- **Store Family Relationships**: The skill allows users to store and retrieve information about family relationships, helping them stay connected with loved ones.
+- **Add Important Life Events**: Users can add and keep track of important life events, ensuring they remember significant moments.
+- **Disorientation Alerts**: The skill can alert users if they seem disoriented, providing guidance and support to help them regain their bearings.
+
+You can enable the Alexa skill [here](https://www.amazon.com/your-alexa-skill-link).
+
+By using this Alexa skill, users and caregivers can access important information and support, helping to improve the quality of life for individuals with Alzheimer's disease.
+
 ## 👥 Project Members
 
 | Name           | Role          | Special Characteristic       | GitHub Profile |
