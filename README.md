@@ -134,7 +134,7 @@ We used Streamlit to develop an interactive web application that integrates our 
 - **Chat Bot Integration**: A chat bot is integrated into the application to assist users with questions related to Alzheimer's disease.
 - **Downloadable Reports**: Users can download detailed reports of the model predictions and analyses in PDF format.
 
-You can access the Streamlit application [here](https://alzheimer-project-tumg7mq7wjzzwdxwtpxdno.streamlit.app).
+You can access the Streamlit application [here](https://memoria-activa.streamlit.app).
 
 ## Alexa Skill Assistant 🗣️
 
@@ -146,7 +146,6 @@ We developed an Alexa skill to assist both users and caregivers in their daily r
 - **Add Important Life Events**: Users can add and keep track of important life events, ensuring they remember significant moments.
 - **Disorientation Alerts**: The skill can alert users if they seem disoriented, providing guidance and support to help them regain their bearings.
 
-You can enable the Alexa skill [here](https://www.amazon.com/your-alexa-skill-link).
 
 By using this Alexa skill, users and caregivers can access important information and support, helping to improve the quality of life for individuals with Alzheimer's disease.
 
