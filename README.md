@@ -146,6 +146,8 @@ We developed an Alexa skill to assist both users and caregivers in their daily r
 - **Add Important Life Events**: Users can add and keep track of important life events, ensuring they remember significant moments.
 - **Disorientation Alerts**: The skill can alert users if they seem disoriented, providing guidance and support to help them regain their bearings.
 
+For more details, you can view a demo [here](https://drive.google.com/file/d/1MNlPD3LEnsNudPqZNkTPPEY45AtTd5jl/view?usp=sharing).
+
 
 By using this Alexa skill, users and caregivers can access important information and support, helping to improve the quality of life for individuals with Alzheimer's disease.
 
