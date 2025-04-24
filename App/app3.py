@@ -1687,7 +1687,7 @@ elif choice == "💬 Chat Bot":
     </style>
     """, unsafe_allow_html=True)
 
-    st.header("Alzheimer's AI Assistant")
+    #st.header("Alzheimer's AI Assistant")
     
     # Introducción con tarjeta estilo info-card
     st.markdown("""
