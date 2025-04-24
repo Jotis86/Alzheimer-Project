@@ -12,6 +12,19 @@ import cohere
 from dotenv import load_dotenv
 
 
+# Configuración de la página
+st.set_page_config(
+    page_title="Alzheimer AI: Detect & Support",
+    page_icon="🧠",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://github.com/Jotis86/Alzheimer-Project/issues',
+        'Report a bug': 'https://github.com/Jotis86/Alzheimer-Project/issues',
+        'About': "# Alzheimer AI: Detect & Support\nThis app provides tools for early detection and management of Alzheimer's disease."
+    }
+)
+
 # Cargar las variables de entorno
 load_dotenv()
 
