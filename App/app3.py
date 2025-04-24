@@ -102,7 +102,7 @@ train_data = pd.read_parquet(train_data_file_path)
 test_data = pd.read_parquet(test_data_file_path)
 
 # Título de la aplicación
-st.title("🧠 Alzheimer AI: Detect & Support")
+st.title("🧠 Alzheimer AI: Detect & Support 🧠")
 
 # Menú de navegación
 st.sidebar.image(navigation_image_path, use_container_width=True)
