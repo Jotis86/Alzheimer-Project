@@ -1872,7 +1872,7 @@ elif choice == "📚 Other Resources":
                 <div class="feature-text">
                     <div class="feature-title">Nutrition Guidelines</div>
                     <div class="feature-description">
-                        Comprehensive guidelines on brain-healthy nutrition that may help reduce Alzheimer's risk. 
+                        Guidelines on brain-healthy nutrition that may help reduce Alzheimer's risk. 
                         Includes recommended food groups, meal suggestions and scientific rationale.
                     </div>
                 </div>
