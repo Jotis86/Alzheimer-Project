@@ -268,7 +268,7 @@ st.markdown(
 )
 
 # Menú de navegación con iconos
-st.sidebar.image(navigation_image_path, use_container_width=True)
+#st.sidebar.image(navigation_image_path, use_container_width=True)
 
 # Menú con opciones e iconos
 menu_options = [
@@ -279,6 +279,75 @@ menu_options = [
     {"icon": "💬", "name": "Chat Bot"},
     {"icon": "📚", "name": "Other Resources"}
 ]
+
+# Estilo y creación del banner personalizado para el sidebar
+st.sidebar.markdown("""
+<style>
+.sidebar-banner {
+    background: linear-gradient(135deg, #006064, #1b5e20);
+    border-radius: 10px;
+    padding: 20px 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M80,20 Q100,40 80,60 Q60,80 40,60 Q20,40 40,20 Q60,0 80,20 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/></svg>');
+    background-size: 150px;
+    opacity: 0.3;
+}
+
+.banner-logo {
+    font-size: 32px;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.banner-title {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.banner-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    font-style: italic;
+}
+
+.banner-dots {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 3px, transparent 4px);
+    background-size: 30px 30px;
+    transform: rotate(45deg);
+    top: -75px;
+    right: -75px;
+    opacity: 0.4;
+}
+</style>
+
+<div class="sidebar-banner">
+    <div class="banner-dots"></div>
+    <div class="banner-logo">🧠</div>
+    <div class="banner-title">Alzheimer AI</div>
+    <div class="banner-subtitle">Detection & Support System</div>
+</div>
+""", unsafe_allow_html=True)
+
+
 
 # Crear los radiobuttons ocultos para mantener la funcionalidad
 choice = st.sidebar.radio("Navigate", [option["name"] for option in menu_options], label_visibility="collapsed")
