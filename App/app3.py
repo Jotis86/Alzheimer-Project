@@ -320,6 +320,78 @@ st.sidebar.markdown("""
 st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
 
+# Añadir un footer bonito al sidebar
+st.sidebar.markdown("""
+<style>
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 96, 100, 0.1), rgba(0, 96, 100, 0.3));
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.footer-links a:hover {
+    color: #a5d6a7;
+    transform: translateY(-2px);
+}
+
+.footer-text {
+    opacity: 0.8;
+}
+
+.footer-divider {
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    margin: 5px auto;
+    border-radius: 2px;
+}
+</style>
+
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="https://github.com/Jotis86/Alzheimer-Project" target="_blank">📂 GitHub</a>
+            <a href="mailto:jotaduranbon@gmail.com">📧 Contact</a>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-text">
+            © 2023 Alzheimer AI Project • Made with ❤️ by Data Scientists
+        </div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+
+
 
 if choice == "Home":
     st.header("Welcome to Alzheimer AI: Detection and Support")
