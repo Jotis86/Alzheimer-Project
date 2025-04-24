@@ -1904,7 +1904,7 @@ elif choice == "📚 Other Resources":
                     <div class="feature-title">Smoking risk</div>
                     <div class="feature-description">
                         Research summary on the relationship between smoking and Alzheimer's disease risk. 
-                        Examines the mechanisms by which tobacco use may accelerate cognitive decline and neurodegeneration.
+                        Explores how tobacco use may accelerate cognitive decline and neurodegeneration.
                     </div>
                 </div>
             </div>
