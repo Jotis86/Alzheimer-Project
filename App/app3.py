@@ -117,12 +117,12 @@ test_data = pd.read_parquet(test_data_file_path)
 
 
 
-# Título de la aplicación con banner de gradiente y sidebar con el mismo gradiente
+# Título de la aplicación con banner de gradiente verde y sidebar con el mismo gradiente
 st.markdown(
     """
     <style>
     .banner {
-        background: linear-gradient(90deg, #3a1c71, #d76d77, #ffaf7b);
+        background: linear-gradient(90deg, #006064, #1b5e20, #a5d6a7);
         padding: 20px;
         border-radius: 10px;
         color: white;
@@ -140,9 +140,9 @@ st.markdown(
         font-style: italic;
         opacity: 0.9;
     }
-    /* Estilo para la barra lateral con el mismo gradiente */
+    /* Estilo para la barra lateral con el mismo gradiente verde */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #3a1c71, #d76d77, #ffaf7b);
+        background: linear-gradient(180deg, #006064, #1b5e20, #a5d6a7);
         color: white;
     }
     /* Ajustar color del texto en el sidebar */
@@ -156,20 +156,10 @@ st.markdown(
         border-radius: 8px;
         padding: 10px;
     }
-    /* Estilos para los elementos del menú de navegación */
-    .menu-item {
-        padding: 10px;
-        margin: 5px 0;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-    .menu-item:hover {
-        background-color: rgba(255, 255, 255, 0.3);
-    }
     /* Estilo para el botón de GitHub */
     .github-button {
         background-color: rgba(255, 255, 255, 0.9); 
-        color: #3a1c71; 
+        color: #006064; 
         padding: 12px 24px; 
         border: none; 
         border-radius: 8px; 
@@ -199,7 +189,7 @@ st.markdown(
         padding-bottom: 10px;
         margin-bottom: 15px;
         font-weight: bold;
-        color: #3a1c71;
+        color: #006064;
     }
     /* Estilos para la tabla */
     table {
@@ -218,11 +208,54 @@ st.markdown(
         font-weight: bold;
     }
     .team-section a {
-        color: #3a1c71;
+        color: #006064;
         text-decoration: none;
     }
     a:hover {
         text-decoration: underline;
+    }
+    
+    /* Estilo personalizado para el menú de navegación */
+    .sidebar-menu {
+        padding: 0;
+        margin-top: 20px;
+    }
+    .menu-item {
+        list-style-type: none;
+        padding: 12px 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-left: 4px solid transparent;
+        display: flex;
+        align-items: center;
+    }
+    .menu-item:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-left: 4px solid #a5d6a7;
+        transform: translateX(5px);
+    }
+    .menu-item.active {
+        background-color: rgba(255, 255, 255, 0.25);
+        border-left: 4px solid #a5d6a7;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .menu-icon {
+        font-size: 18px;
+        margin-right: 10px;
+        width: 25px;
+        text-align: center;
+    }
+    .menu-text {
+        font-weight: 500;
+    }
+
+    /* Ocultar el radio button estándar */
+    [data-testid="stRadio"] > div {
+        display: none;
     }
     </style>
     
@@ -234,12 +267,37 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Menú de navegación con estilo mejorado
+# Menú de navegación con iconos
 st.sidebar.image(navigation_image_path, use_container_width=True)
 
-# Menú de navegación con fondo de gradiente
-menu = ["Home", "Power BI", "Machine Learning", "Deep Learning", "Chat Bot", "Other Resources"]
-choice = st.sidebar.radio("Navigate", menu)
+# Menú con opciones e iconos
+menu_options = [
+    {"icon": "🏠", "name": "Home"},
+    {"icon": "📊", "name": "Power BI"},
+    {"icon": "🤖", "name": "Machine Learning"},
+    {"icon": "🧠", "name": "Deep Learning"},
+    {"icon": "💬", "name": "Chat Bot"},
+    {"icon": "📚", "name": "Other Resources"}
+]
+
+# Crear los radiobuttons ocultos para mantener la funcionalidad
+choice = st.sidebar.radio("Navigate", [option["name"] for option in menu_options], label_visibility="collapsed")
+
+# Generar el menú visual personalizado
+st.sidebar.markdown('<div class="sidebar-menu">', unsafe_allow_html=True)
+for option in menu_options:
+    active_class = "active" if choice == option["name"] else ""
+    st.sidebar.markdown(
+        f"""
+        <div class="menu-item {active_class}" 
+             onclick="document.querySelectorAll('[data-testid=stRadio] label')[{menu_options.index(option)}].click();">
+            <div class="menu-icon">{option["icon"]}</div>
+            <div class="menu-text">{option["name"]}</div>
+        </div>
+        """, 
+        unsafe_allow_html=True
+    )
+st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
 # Botón de enlace a GitHub con estilo mejorado
 st.sidebar.markdown("""
