@@ -761,7 +761,7 @@ elif choice == "📊 Power BI":
                 <div class="feature-text">
                     <div class="feature-title">Interactive Filters</div>
                     <div class="feature-description">
-                        <p>Our dashboards include powerful interactive filters:</p>
+                        <p>Our dashboards include interactive filters:</p>
                         <ul style="margin-top: 10px; padding-left: 20px;">
                             <li>Filter by age, gender, and other demographics</li>
                             <li>Slice data by different cognitive assessment scores</li>
