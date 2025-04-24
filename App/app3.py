@@ -612,7 +612,7 @@ elif choice == "📊 Power BI":
     # Reproducir el video de Power BI
     st.video(video)
 
-elif choice == "Machine Learning":
+elif choice == "🤖 Machine Learning":
     st.header("Machine Learning Model")
 
     # Application description
@@ -761,7 +761,7 @@ elif choice == "Machine Learning":
         mime='application/pdf',
     )
 
-elif choice == "Deep Learning":
+elif choice == "🧠 Deep Learning":
     st.header("Deep Learning Model")
 
     # Application description
@@ -838,7 +838,7 @@ elif choice == "Deep Learning":
         mime='application/pdf',
     )
 
-elif choice == "Chat Bot":
+elif choice == "💬 Chat Bot":
     st.header("Chat Bot")
     st.markdown("""
     This section will feature a chat bot to assist users with questions and provide support related to Alzheimer's disease.
@@ -861,7 +861,7 @@ elif choice == "Chat Bot":
         st.write(f"**You:** {user_input}")
         st.write(f"**Chat Bot:** {bot_response}")
 
-elif choice == "Other Resources":
+elif choice == "📚 Other Resources":
     st.header("Other Resources")
     st.markdown("""
     Here you can find additional resources and information related to Alzheimer's disease, including research papers, support groups, and more.
