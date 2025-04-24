@@ -435,7 +435,7 @@ st.sidebar.markdown("""
         </div>
         <div class="footer-divider"></div>
         <div class="footer-text">
-            © 2023 Alzheimer AI Project • Made with ❤️ by Data lovers
+            © 2025 Alzheimer AI Project • Made with ❤️ by Data lovers
         </div>
     </div>
 </div>
