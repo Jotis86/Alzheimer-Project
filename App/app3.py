@@ -1919,7 +1919,7 @@ elif choice == "📚 Other Resources":
     </style>
     """, unsafe_allow_html=True)
 
-    st.header("Additional Resources for Alzheimer's")
+    #st.header("Additional Resources for Alzheimer's")
     
     # Introducción con tarjeta estilo info-card
     st.markdown("""
