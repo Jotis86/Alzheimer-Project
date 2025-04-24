@@ -784,7 +784,7 @@ elif choice == "📊 Power BI":
                         <p>Powerful exploration capabilities:</p>
                         <ul style="margin-top: 10px; padding-left: 20px;">
                             <li>Drill down into specific data points efficiently</li>
-                            <li>Explore trends over time seamlessly</li>
+                            <li>Explore trends over time seamlessly and intuitively</li>
                             <li>Export visualizations and insights instantly</li>
                         </ul>
                     </div>
