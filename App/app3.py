@@ -299,15 +299,6 @@ for option in menu_options:
     )
 st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
-# Botón de enlace a GitHub con estilo mejorado
-st.sidebar.markdown("""
-<a href="https://github.com/Jotis86/Alzheimer-Project" target="_blank">
-    <div class="github-button">
-        <i class="fab fa-github"></i> GitHub Repository
-    </div>
-</a>
-""", unsafe_allow_html=True)
-
 # Tabla con los nombres de los miembros del proyecto con estilo mejorado
 st.sidebar.markdown('<div class="team-section">', unsafe_allow_html=True)
 st.sidebar.markdown('<div class="team-title">Project Members</div>', unsafe_allow_html=True)
@@ -323,19 +314,16 @@ st.sidebar.markdown('</div>', unsafe_allow_html=True)
 # Añadir un footer bonito al sidebar
 st.sidebar.markdown("""
 <style>
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+.sidebar-footer {
     background: linear-gradient(180deg, rgba(0, 96, 100, 0.1), rgba(0, 96, 100, 0.3));
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px 10px;
     font-size: 12px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    z-index: 999;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .footer-content {
@@ -376,7 +364,7 @@ st.sidebar.markdown("""
 }
 </style>
 
-<div class="footer">
+<div class="sidebar-footer">
     <div class="footer-content">
         <div class="footer-links">
             <a href="https://github.com/Jotis86/Alzheimer-Project" target="_blank">📂 GitHub</a>
@@ -384,7 +372,7 @@ st.sidebar.markdown("""
         </div>
         <div class="footer-divider"></div>
         <div class="footer-text">
-            © 2023 Alzheimer AI Project • Made with ❤️ by Data Scientists
+            © 2025 Alzheimer AI Project • Made with ❤️ by Data lovers
         </div>
     </div>
 </div>
