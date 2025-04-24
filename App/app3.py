@@ -2021,8 +2021,9 @@ elif choice == "📚 Other Resources":
     """, unsafe_allow_html=True)
     
 
-# Footer
+# Footer minimalista
 st.markdown("""
----
-**Note:** This application is for educational purposes only and should not be used for real medical diagnoses.
-""")
+<div style="margin-top: 60px; padding: 12px 0; border-top: 1px solid rgba(27, 94, 32, 0.2); font-size: 0.8rem; color: #546e7a; text-align: center;">
+    © 2025 Alzheimer AI Project — For educational and research purposes only
+</div>
+""", unsafe_allow_html=True)
