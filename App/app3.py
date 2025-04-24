@@ -579,24 +579,124 @@ if choice == "🏠 Home":
 
 
 elif choice == "📊 Power BI":
+    # Usamos exactamente los mismos estilos que en Home para mantener coherencia
+    st.markdown("""
+    <style>
+    /* Estilo para las tarjetas */
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 2rem;
+    }
+    .info-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border-top: 4px solid #1b5e20;
+        margin-bottom: 16px;
+    }
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #006064;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .card-title-icon {
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+    .card-content {
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+    }
+    .feature-icon {
+        font-size: 1.5rem;
+        margin-right: 15px;
+        color: #1b5e20;
+        min-width: 30px;
+        text-align: center;
+    }
+    .feature-text {
+        flex-grow: 1;
+    }
+    .feature-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #2e7d32;
+    }
+    .feature-description {
+        font-size: 0.9rem;
+        color: #666;
+    }
+    
+    /* Separador decorativo */
+    .divider {
+        height: 4px;
+        background: linear-gradient(90deg, #006064, #1b5e20, #a5d6a7);
+        border-radius: 2px;
+        margin: 2rem 0;
+    }
+    
+    /* Estilo para la sección de llamada a la acción */
+    .cta-card {
+        margin-top: 16px; 
+        text-align: center; 
+        background: linear-gradient(90deg, rgba(0,96,100,0.1) 0%, rgba(27,94,32,0.1) 100%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .cta-title {
+        font-size: 1.2rem; 
+        margin-bottom: 10px;
+        color: #006064;
+        font-weight: bold;
+    }
+    .cta-text {
+        color: #006064; 
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # Título principal
     st.header("Power BI Dashboards")
     
-    # Introducción con estilo
+    # Introducción con el mismo estilo CTA de la página Home
     st.markdown("""
-    <div style="background: linear-gradient(90deg, rgba(0,96,100,0.1) 0%, rgba(27,94,32,0.1) 100%); padding: 20px; border-radius: 10px; margin-bottom: 25px;">
-        <h3 style="color: #006064; margin-bottom: 15px;">Interactive Data Visualizations</h3>
-        <p style="font-size: 16px; color: #444;">
-            Explore our comprehensive Power BI dashboards that provide deep insights into Alzheimer's disease data. 
-            These interactive visualizations help healthcare professionals and researchers better understand patterns, 
+    <div class="cta-card" style="text-align: left;">
+        <div class="cta-title">
+            <span style="font-size: 1.5rem;">📊</span> Interactive Data Visualizations
+        </div>
+        <div class="cta-text">
+            Explore our comprehensive Power BI dashboards that provide deep insights into Alzheimer's disease data.
+            These interactive visualizations help healthcare professionals and researchers better understand patterns,
             trends, and correlations in the data.
-        </p>
+        </div>
     </div>
     """, unsafe_allow_html=True)
     
     # Sección de categorías de dashboards
     st.markdown('<div class="card-title"><span class="card-title-icon">📊</span> Dashboard Categories</div>', unsafe_allow_html=True)
     
-    # Tarjetas para cada categoría (3 columnas como en Home)
+    # Tarjetas para cada categoría - 3 columnas como en el Home
     col1, col2, col3 = st.columns(3)
     
     with col1:
@@ -607,9 +707,7 @@ elif choice == "📊 Power BI":
                 <div class="feature-icon">🍎</div>
                 <div class="feature-text">
                     <div class="feature-title">Lifestyle Analysis</div>
-                    <div class="feature-description">
-                        Explore the impact of lifestyle factors on Alzheimer's disease risk and progression.
-                    </div>
+                    <div class="feature-description">Explore the impact of lifestyle factors on Alzheimer's disease risk and progression.</div>
                 </div>
             </div>
         </div>
@@ -623,9 +721,7 @@ elif choice == "📊 Power BI":
                 <div class="feature-icon">🩺</div>
                 <div class="feature-text">
                     <div class="feature-title">Medical Analysis</div>
-                    <div class="feature-description">
-                        Visualize clinical measurements and their relationship to Alzheimer's detection.
-                    </div>
+                    <div class="feature-description">Visualize clinical measurements and their relationship to Alzheimer's detection.</div>
                 </div>
             </div>
         </div>
@@ -639,9 +735,7 @@ elif choice == "📊 Power BI":
                 <div class="feature-icon">🧠</div>
                 <div class="feature-text">
                     <div class="feature-title">Cognitive Analysis</div>
-                    <div class="feature-description">
-                        Examine cognitive assessments to identify early warning signs of Alzheimer's.
-                    </div>
+                    <div class="feature-description">Examine cognitive assessments to identify early warning signs of Alzheimer's.</div>
                 </div>
             </div>
         </div>
@@ -653,7 +747,7 @@ elif choice == "📊 Power BI":
     # Sección de características detalladas
     st.markdown('<div class="card-title"><span class="card-title-icon">🔍</span> Dashboard Features</div>', unsafe_allow_html=True)
     
-    # Características detalladas (2 columnas)
+    # Características detalladas - 2 columnas como en Home
     col1, col2 = st.columns(2)
     
     with col1:
@@ -699,13 +793,13 @@ elif choice == "📊 Power BI":
     # Separador decorativo
     st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
     
-    # Título para la sección de video
+    # Sección de video
     st.markdown('<div class="card-title"><span class="card-title-icon">🎥</span> Dashboard Preview</div>', unsafe_allow_html=True)
     
-    # Video contenido en su propia tarjeta
+    # Video como una tarjeta única que ocupa toda la anchura
     st.markdown("""
-    <div class="info-card" style="margin-bottom: 30px;">
-        <p style="margin-bottom: 15px; color: #444;">
+    <div class="info-card">
+        <p style="color: #444; margin-bottom: 15px;">
             Watch this short video demonstration of our Power BI dashboards to see their capabilities in action:
         </p>
     </div>
@@ -718,45 +812,58 @@ elif choice == "📊 Power BI":
     # Separador decorativo
     st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
     
-    # Sección de descarga en su propia sección completa
+    # Sección de descarga
     st.markdown('<div class="card-title"><span class="card-title-icon">💾</span> Download Resources</div>', unsafe_allow_html=True)
     
-    # Tarjeta de descarga
-    st.markdown("""
-    <div class="info-card" style="margin-bottom: 20px;">
-        <p style="margin-bottom: 15px; color: #444;">
-            Download the complete Power BI dashboard file to explore the data on your own computer. You'll need Power BI Desktop installed to open this file.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+    # Columnas para mejor disposición
+    col1, col2 = st.columns([2, 1])
     
-    # Centrar el botón de descarga
-    col1, col2, col3 = st.columns([1, 2, 1])
+    with col1:
+        # Información de descarga
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">📥</div>
+                <div class="feature-text">
+                    <div class="feature-title">Power BI Dashboard Files</div>
+                    <div class="feature-description">
+                        Download the complete Power BI dashboard file to explore the data on your own computer. 
+                        You can open these files with Power BI Desktop, which is free and available for Windows.
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
     with col2:
+        # Tarjeta para el botón de descarga
+        st.markdown("""
+        <div class="info-card" style="display: flex; justify-content: center; align-items: center; height: 100%;">
+        </div>
+        """, unsafe_allow_html=True)
+        
         # Botón para descargar el archivo de Power BI
         pbix_path = os.path.join('Power_BI', 'Alzheimer_Dashboard.pbix')
         with open(pbix_path, "rb") as pbix_file:
             PBIXbyte = pbix_file.read()
         
         st.download_button(
-            label="📥 Download Power BI Dashboard",
+            label="📥 Download Dashboard",
             data=PBIXbyte,
             file_name="Alzheimer_Dashboard.pbix",
-            mime='application/vnd.openxmlformats-officedocument.presentationml.presentation',
+            mime='application/vnd.powerbi.pbix',
             help="Click to download the complete Power BI dashboard file"
         )
     
-    # Nota informativa en una tarjeta separada
+    # Nota final con estilo CTA como en Home
     st.markdown("""
-    <div class="info-card" style="background-color: rgba(27,94,32,0.1); margin-top: 20px;">
-        <div class="feature-item">
-            <div class="feature-icon">ℹ️</div>
-            <div class="feature-text">
-                <div class="feature-title">Important Note</div>
-                <div class="feature-description">
-                    To open this file, you'll need <a href="https://powerbi.microsoft.com/desktop/" target="_blank">Power BI Desktop</a> installed on your computer. The application is free and available for Windows. For Mac users, you can access similar functionality through the Power BI service online.
-                </div>
-            </div>
+    <div class="cta-card">
+        <div class="cta-title">
+            <span style="font-size: 1.5rem;">ℹ️</span> Important Note
+        </div>
+        <div class="cta-text">
+            To open these files, you'll need <a href="https://powerbi.microsoft.com/desktop/" target="_blank">Power BI Desktop</a> 
+            installed on your computer. The application is free and available for Windows.
         </div>
     </div>
     """, unsafe_allow_html=True)
