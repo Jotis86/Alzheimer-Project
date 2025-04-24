@@ -114,35 +114,154 @@ def preprocess_image(image):
 train_data = pd.read_parquet(train_data_file_path)
 test_data = pd.read_parquet(test_data_file_path)
 
-# Título de la aplicación
-st.title("🧠 Alzheimer AI: Detect & Support 🧠")
 
-# Menú de navegación
+
+
+# Título de la aplicación con banner de gradiente y sidebar con el mismo gradiente
+st.markdown(
+    """
+    <style>
+    .banner {
+        background: linear-gradient(90deg, #3a1c71, #d76d77, #ffaf7b);
+        padding: 20px;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .subtitle {
+        font-size: 18px;
+        font-style: italic;
+        opacity: 0.9;
+    }
+    /* Estilo para la barra lateral con el mismo gradiente */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #3a1c71, #d76d77, #ffaf7b);
+        color: white;
+    }
+    /* Ajustar color del texto en el sidebar */
+    [data-testid="stSidebar"] .stRadio label {
+        color: white !important;
+        font-weight: bold;
+    }
+    /* Ajustar estilo de los botones de radio */
+    [data-testid="stSidebar"] .stRadio [role="radiogroup"] {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        padding: 10px;
+    }
+    /* Estilos para los elementos del menú de navegación */
+    .menu-item {
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .menu-item:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    /* Estilo para el botón de GitHub */
+    .github-button {
+        background-color: rgba(255, 255, 255, 0.9); 
+        color: #3a1c71; 
+        padding: 12px 24px; 
+        border: none; 
+        border-radius: 8px; 
+        cursor: pointer;
+        width: 100%;
+        font-weight: bold;
+        text-align: center;
+        margin: 15px 0;
+        transition: background-color 0.3s;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .github-button:hover {
+        background-color: white;
+    }
+    /* Estilo para la sección del equipo */
+    .team-section {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        color: #333;
+        margin-top: 20px;
+    }
+    .team-title {
+        text-align: center;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        font-weight: bold;
+        color: #3a1c71;
+    }
+    /* Estilos para la tabla */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    /* Estilos para los enlaces */
+    [data-testid="stSidebar"] a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .team-section a {
+        color: #3a1c71;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    </style>
+    
+    <div class="banner">
+        <div class="title">🧠 Alzheimer AI: Detect & Support 🧠</div>
+        <div class="subtitle">Advanced AI tools for early detection and management</div>
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
+
+# Menú de navegación con estilo mejorado
 st.sidebar.image(navigation_image_path, use_container_width=True)
+
+# Menú de navegación con fondo de gradiente
 menu = ["Home", "Power BI", "Machine Learning", "Deep Learning", "Chat Bot", "Other Resources"]
 choice = st.sidebar.radio("Navigate", menu)
 
-# Botón de enlace a GitHub
+# Botón de enlace a GitHub con estilo mejorado
 st.sidebar.markdown("""
 <a href="https://github.com/Jotis86/Alzheimer-Project" target="_blank">
-    <button style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
-        GitHub Repository
-    </button>
+    <div class="github-button">
+        <i class="fab fa-github"></i> GitHub Repository
+    </div>
 </a>
 """, unsafe_allow_html=True)
 
-# Tabla con los nombres de los miembros del proyecto
-st.sidebar.markdown("## Project Members")
+# Tabla con los nombres de los miembros del proyecto con estilo mejorado
+st.sidebar.markdown('<div class="team-section">', unsafe_allow_html=True)
+st.sidebar.markdown('<div class="team-title">Project Members</div>', unsafe_allow_html=True)
 st.sidebar.markdown("""
-| Name           | Role         |
-|----------------|--------------------------------|
-| [Juan Duran](https://github.com/Jotis86)     | Data Analyst 📊     |
-| [Andrea Lafarga](https://github.com/AndreaLaHe) | Data Engineer 🛠️   |
+| Name | Role |
+|------|------|
+| [Juan Duran](https://github.com/Jotis86) | Data Analyst 📊 |
+| [Andrea Lafarga](https://github.com/AndreaLaHe) | Data Engineer 🛠️ |
 """, unsafe_allow_html=True)
+st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
 
-# Imagen principal en todas las pestañas
-st.image(home_image_path, use_container_width=True)
 
 if choice == "Home":
     st.header("Welcome to Alzheimer AI: Detection and Support")
