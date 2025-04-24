@@ -549,7 +549,7 @@ if choice == "Home":
     """, unsafe_allow_html=True)
 
     # Título principal
-    st.header("Welcome to Alzheimer AI: Detection and Support")
+    #st.header("Welcome to Alzheimer AI: Detection and Support")
     
     # Sección de objetivos
     st.markdown('<div class="card-title"><span class="card-title-icon">🎯</span> Objectives of the Project</div>', unsafe_allow_html=True)
