@@ -1727,57 +1727,298 @@ elif choice == "💬 Chat Bot":
         st.write(f"**Chat Bot:** {bot_response}")
 
 elif choice == "📚 Other Resources":
-    st.header("Other Resources")
+    # Definición de estilos igual que en las otras secciones
     st.markdown("""
-    Here you can find additional resources and information related to Alzheimer's disease, including research papers, support groups, and more.
-    """)
+    <style>
+    /* Estilo para las tarjetas */
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 2rem;
+    }
+    .info-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border-top: 4px solid #1b5e20;
+        margin-bottom: 16px;
+    }
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #006064;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .card-title-icon {
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+    .card-content {
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+    }
+    .feature-icon {
+        font-size: 1.5rem;
+        margin-right: 15px;
+        color: #1b5e20;
+        min-width: 30px;
+        text-align: center;
+    }
+    .feature-text {
+        flex-grow: 1;
+    }
+    .feature-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #2e7d32;
+    }
+    .feature-description {
+        font-size: 0.9rem;
+        color: #666;
+    }
+    
+    /* Separador decorativo */
+    .divider {
+        height: 4px;
+        background: linear-gradient(90deg, #006064, #1b5e20, #a5d6a7);
+        border-radius: 2px;
+        margin: 2rem 0;
+    }
+    
+    /* Estilo para la sección de llamada a la acción */
+    .cta-card {
+        margin-top: 16px; 
+        text-align: center; 
+        background: linear-gradient(90deg, rgba(0,96,100,0.1) 0%, rgba(27,94,32,0.1) 100%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .cta-title {
+        font-size: 1.2rem; 
+        margin-bottom: 10px;
+        color: #006064;
+        font-weight: bold;
+    }
+    .cta-text {
+        color: #006064; 
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+    }
+    
+    /* Estilo para botones de recursos */
+    .resource-button {
+        text-align: center;
+        margin-top: 15px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
+    st.header("Additional Resources for Alzheimer's")
+    
+    # Introducción con tarjeta estilo info-card
+    st.markdown("""
+    <div class="info-card">
+        <div class="feature-item">
+            <div class="feature-icon">📚</div>
+            <div class="feature-text">
+                <div class="feature-title">Research & Educational Materials</div>
+                <div class="feature-description">
+                    Explore our collection of resources related to Alzheimer's disease. These materials provide valuable insights 
+                    into lifestyle factors, dietary considerations, and other aspects that may affect brain health and Alzheimer's risk.
+                    All documents are available for download in PDF format.
+                </div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Separador decorativo
+    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+    
+    # Título de la sección de documentos
+    st.markdown('<div class="card-title"><span class="card-title-icon">📄</span> Research Documents</div>', unsafe_allow_html=True)
+    
     # Definir las rutas de los archivos PDF
     nutrition_guidelines_path = ('App/Nutrition_Guidelines.pdf')
     smoking_alzheimer_path = ('App/Smoking_and_Alzheimer.pdf')
     lysine_alzheimer_path = ('App/Lysine_and_Alzheimer.pdf')
 
-    # Introducción y botón para descargar el PDF de pautas de alimentación
-    st.subheader("🥗 Nutrition Guidelines")
+    # Organizar los recursos en 3 columnas
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        # Recurso 1: Nutrition Guidelines
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🥗</div>
+                <div class="feature-text">
+                    <div class="feature-title">Nutrition Guidelines</div>
+                    <div class="feature-description">
+                        Comprehensive guidelines on brain-healthy nutrition that may help reduce Alzheimer's risk. 
+                        Includes recommended food groups, meal planning suggestions, and scientific rationale.
+                    </div>
+                </div>
+            </div>
+            <div class="resource-button">
+                <img src="https://img.icons8.com/color/48/000000/pdf.png" width="32" style="vertical-align: middle; margin-right: 5px;">
+                <span style="color: #1b5e20; font-weight: 500;">Nutrition Guidelines PDF</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        with open(nutrition_guidelines_path, "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+        st.download_button(
+            label="📥 Download PDF",
+            data=PDFbyte,
+            file_name="Nutrition_Guidelines.pdf",
+            mime='application/pdf',
+            key="nutrition_pdf"
+        )
+    
+    with col2:
+        # Recurso 2: Smoking and Alzheimer's
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🚬</div>
+                <div class="feature-text">
+                    <div class="feature-title">Smoking & Alzheimer's</div>
+                    <div class="feature-description">
+                        Research summary on the relationship between smoking and Alzheimer's disease risk. 
+                        Examines the mechanisms by which tobacco use may accelerate cognitive decline and neurodegeneration.
+                    </div>
+                </div>
+            </div>
+            <div class="resource-button">
+                <img src="https://img.icons8.com/color/48/000000/pdf.png" width="32" style="vertical-align: middle; margin-right: 5px;">
+                <span style="color: #1b5e20; font-weight: 500;">Smoking & Alzheimer's PDF</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        with open(smoking_alzheimer_path, "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+        st.download_button(
+            label="📥 Download PDF",
+            data=PDFbyte,
+            file_name="Smoking_and_Alzheimer.pdf",
+            mime='application/pdf',
+            key="smoking_pdf"
+        )
+    
+    with col3:
+        # Recurso 3: Lysine and Alzheimer's
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">💊</div>
+                <div class="feature-text">
+                    <div class="feature-title">Lysine & Alzheimer's</div>
+                    <div class="feature-description">
+                        Scientific analysis of lysine's potential role in brain health and Alzheimer's disease. 
+                        Covers recent research on this essential amino acid and its effects on neurological function.
+                    </div>
+                </div>
+            </div>
+            <div class="resource-button">
+                <img src="https://img.icons8.com/color/48/000000/pdf.png" width="32" style="vertical-align: middle; margin-right: 5px;">
+                <span style="color: #1b5e20; font-weight: 500;">Lysine & Alzheimer's PDF</span>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        with open(lysine_alzheimer_path, "rb") as pdf_file:
+            PDFbyte = pdf_file.read()
+        st.download_button(
+            label="📥 Download PDF",
+            data=PDFbyte,
+            file_name="Lysine_and_Alzheimer.pdf",
+            mime='application/pdf',
+            key="lysine_pdf"
+        )
+    
+    # Separador decorativo
+    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+    
+    # Título de la sección de enlaces
+    st.markdown('<div class="card-title"><span class="card-title-icon">🔗</span> Useful Links & Support Groups</div>', unsafe_allow_html=True)
+    
+    # Enlaces útiles en 2 columnas
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🏥</div>
+                <div class="feature-text">
+                    <div class="feature-title">Medical Resources</div>
+                    <div class="feature-description">
+                        <ul style="padding-left: 20px; margin-top: 5px;">
+                            <li><a href="https://www.alz.org/" target="_blank">Alzheimer's Association</a> - Research, care and support</li>
+                            <li><a href="https://www.nia.nih.gov/health/alzheimers" target="_blank">National Institute on Aging</a> - Government resources</li>
+                            <li><a href="https://www.who.int/news-room/fact-sheets/detail/dementia" target="_blank">World Health Organization</a> - Global health perspective</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                <div class="feature-text">
+                    <div class="feature-title">Support Groups</div>
+                    <div class="feature-description">
+                        <ul style="padding-left: 20px; margin-top: 5px;">
+                            <li><a href="https://www.alz.org/help-support/community/support-groups" target="_blank">Alzheimer's Association Support Groups</a></li>
+                            <li><a href="https://www.alzconnected.org/" target="_blank">AlzConnected</a> - Online community</li>
+                            <li><a href="https://www.caregiver.org/connecting-caregivers/support-groups/" target="_blank">Family Caregiver Alliance</a> - Caregiver support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Nota final
     st.markdown("""
-    This document provides guidelines on nutrition and dietary habits that may help in managing and potentially reducing the risk of Alzheimer's disease.
-    """)
-    with open(nutrition_guidelines_path, "rb") as pdf_file:
-        PDFbyte = pdf_file.read()
-    st.download_button(
-        label="📥 Download Nutrition Guidelines PDF",
-        data=PDFbyte,
-        file_name="Nutrition_Guidelines.pdf",
-        mime='application/pdf',
-    )
-
-    # Introducción y botón para descargar el PDF de la relación entre Alzheimer y fumar
-    st.subheader("🚬 Smoking and Alzheimer's Disease")
-    st.markdown("""
-    This document explores the relationship between smoking and Alzheimer's disease, discussing how smoking may impact the risk and progression of the disease.
-    """)
-    with open(smoking_alzheimer_path, "rb") as pdf_file:
-        PDFbyte = pdf_file.read()
-    st.download_button(
-        label="📥 Download Smoking and Alzheimer PDF",
-        data=PDFbyte,
-        file_name="Smoking_and_Alzheimer.pdf",
-        mime='application/pdf',
-    )
-
-    # Introducción y botón para descargar el PDF de la relación entre Alzheimer y lisina
-    st.subheader("💊 Lysine and Alzheimer's Disease")
-    st.markdown("""
-    This document examines the potential relationship between lysine, an essential amino acid, and Alzheimer's disease, including its possible effects on brain health.
-    """)
-    with open(lysine_alzheimer_path, "rb") as pdf_file:
-        PDFbyte = pdf_file.read()
-    st.download_button(
-        label="📥 Download Lysine and Alzheimer PDF",
-        data=PDFbyte,
-        file_name="Lysine_and_Alzheimer.pdf",
-        mime='application/pdf',
-    )
+    <div class="info-card">
+        <div class="feature-item">
+            <div class="feature-icon">📝</div>
+            <div class="feature-text">
+                <div class="feature-title">Request Additional Resources</div>
+                <div class="feature-description">
+                    If you're looking for specific information not found here, please contact us. We regularly update our resource 
+                    library based on new research and user requests. All materials are carefully reviewed by our team of medical professionals 
+                    to ensure accuracy and relevance.
+                </div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
     
 
 # Footer
