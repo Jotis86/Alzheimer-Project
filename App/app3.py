@@ -1901,7 +1901,7 @@ elif choice == "📚 Other Resources":
             <div class="feature-item">
                 <div class="feature-icon">🚬</div>
                 <div class="feature-text">
-                    <div class="feature-title">Smoking & Alzheimer's</div>
+                    <div class="feature-title">Smoking risk</div>
                     <div class="feature-description">
                         Research summary on the relationship between smoking and Alzheimer's disease risk. 
                         Examines the mechanisms by which tobacco use may accelerate cognitive decline and neurodegeneration.
