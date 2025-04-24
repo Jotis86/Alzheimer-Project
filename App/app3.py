@@ -1544,13 +1544,16 @@ elif choice == "🧠 Deep Learning":
     
     # Nota importante en formato CTA
     st.markdown("""
-    <div class="cta-card">
-        <div class="cta-title">
-            <span style="font-size: 1.5rem;">⚠️</span> Important Note
-        </div>
-        <div class="cta-text">
-            This deep learning model is intended for research and educational purposes only. It should not replace
-            professional medical diagnosis. Always consult with healthcare professionals for proper evaluation and diagnosis.
+    <div class="info-card">
+        <div class="feature-item">
+            <div class="feature-icon">⚠️</div>
+            <div class="feature-text">
+                <div class="feature-title">Important Note</div>
+                <div class="feature-description">
+                    This deep learning model is intended for research and educational purposes only. It should not replace
+                    professional medical diagnosis. Always consult with healthcare professionals for proper evaluation and diagnosis.
+                </div>
+            </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
