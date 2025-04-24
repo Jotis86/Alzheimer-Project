@@ -579,38 +579,162 @@ if choice == "🏠 Home":
 
 
 elif choice == "📊 Power BI":
-    st.header("Power BI")
+    st.header("Power BI Dashboards")
+    
+    # Introducción con estilo
     st.markdown("""
-    This section features Power BI dashboards and reports to provide insights and visualizations related to Alzheimer's disease.
+    <div style="background: linear-gradient(90deg, rgba(0,96,100,0.1) 0%, rgba(27,94,32,0.1) 100%); padding: 20px; border-radius: 10px; margin-bottom: 25px;">
+        <h3 style="color: #006064; margin-bottom: 15px;">Interactive Data Visualizations</h3>
+        <p style="font-size: 16px; color: #444;">
+            Explore our comprehensive Power BI dashboards that provide deep insights into Alzheimer's disease data. 
+            These interactive visualizations help healthcare professionals and researchers better understand patterns, 
+            trends, and correlations in the data.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
     
-    Power BI is a powerful data visualization tool that allows us to create interactive and shareable dashboards. In this section, you will find various dashboards that present key metrics and trends related to Alzheimer's disease. These visualizations help in understanding the data better and making informed decisions.
+    # Sección de categorías de dashboards
+    st.markdown('<div class="card-title"><span class="card-title-icon">📊</span> Dashboard Categories</div>', unsafe_allow_html=True)
     
-    The dashboards are divided into three main tabs:
-    - **Lifestyle Analysis**: Visualizations showing the impact of lifestyle factors such as diet, exercise, and sleep on Alzheimer's disease.
-    - **Medical Analysis**: Charts and graphs depicting medical assessments, including blood pressure, cholesterol levels, and other clinical measurements.
-    - **Functional and Cognitive Analysis**: Visual representations of cognitive and functional assessments, highlighting patterns and anomalies associated with different stages of Alzheimer's.
+    # Tarjetas para cada categoría
+    col1, col2 = st.columns(2)
     
-    Explore the dashboards to gain deeper insights into the data and uncover trends that can aid in the early detection and management of Alzheimer's disease.
-    """)
+    with col1:
+        # Tarjeta 1: Lifestyle Analysis
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🍎</div>
+                <div class="feature-text">
+                    <div class="feature-title">Lifestyle Analysis</div>
+                    <div class="feature-description">
+                        Explore the impact of lifestyle factors such as diet, exercise, and sleep on Alzheimer's disease risk and progression.
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Physical activity correlations</li>
+                            <li>Sleep quality metrics</li>
+                            <li>Dietary patterns analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Tarjeta 2: Medical Analysis
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🩺</div>
+                <div class="feature-text">
+                    <div class="feature-title">Medical Analysis</div>
+                    <div class="feature-description">
+                        Visualize clinical measurements and their relationship to Alzheimer's disease detection and progression.
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Blood pressure trends</li>
+                            <li>Cholesterol level correlations</li>
+                            <li>Medical history impact</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col2:
+        # Tarjeta 3: Functional & Cognitive Analysis
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🧠</div>
+                <div class="feature-text">
+                    <div class="feature-title">Functional & Cognitive Analysis</div>
+                    <div class="feature-description">
+                        Examine cognitive assessments and functional capacity metrics to identify early warning signs.
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Cognitive test score patterns</li>
+                            <li>Functional assessment trends</li>
+                            <li>Early symptom indicators</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Tarjeta 4: How to Use
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🔍</div>
+                <div class="feature-text">
+                    <div class="feature-title">How to Use These Dashboards</div>
+                    <div class="feature-description">
+                        <ul style="margin-top: 10px; padding-left: 20px;">
+                            <li>Click on visualizations to filter data</li>
+                            <li>Use the slicers to segment by demographics</li>
+                            <li>Hover over charts for detailed tooltips</li>
+                            <li>Download insights for your research</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Separador decorativo
+    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+    
+    # Video y descarga
+    col1, col2 = st.columns([2, 1])
+    
+    with col1:
+        # Vista previa del dashboard
+        st.markdown("""
+        <div class="card-title"><span class="card-title-icon">🎥</span> Dashboard Preview</div>
+        """, unsafe_allow_html=True)
+        
+        # Definir las rutas relativas dentro de la carpeta "App"
+        video = os.path.join('Power_BI', '2025-03-02 19-23-46.mp4')
+        # Reproducir el video de Power BI
+        st.video(video)
+        
+    with col2:
+        # Sección de descarga
+        st.markdown("""
+        <div class="card-title"><span class="card-title-icon">💾</span> Download Resources</div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); margin-bottom: 20px;">
+            <p style="margin-bottom: 15px;">Download the complete Power BI dashboard file to explore the data on your own computer:</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Botón para descargar el archivo de Power BI
+        pbix_path = os.path.join('Power_BI', 'Alzheimer_Dashboard.pbix')
+        with open(pbix_path, "rb") as pbix_file:
+            PBIXbyte = pbix_file.read()
+        
+        st.download_button(
+            label="📥 Download Power BI Dashboard",
+            data=PBIXbyte,
+            file_name="Alzheimer_Dashboard.pbix",
+            mime='application/vnd.openxmlformats-officedocument.presentationml.presentation',
+            help="Click to download the complete Power BI dashboard file"
+        )
+        
+        st.markdown("""
+        <div style="background-color: rgba(27,94,32,0.1); padding: 15px; border-radius: 10px; margin-top: 20px;">
+            <p style="font-size: 14px; font-style: italic; color: #1b5e20;">
+                Note: To open this file, you'll need Power BI Desktop installed on your computer.
+                <a href="https://powerbi.microsoft.com/desktop/" target="_blank">Download Power BI Desktop here</a>.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
 
-    # Definir las rutas relativas dentro de la carpeta "App"
-    video = os.path.join('Power_BI', '2025-03-02 19-23-46.mp4')
-    pbix_path = os.path.join('Power_BI', 'Alzheimer_Dashboard.pbix')
 
-    # Botón para descargar el archivo de Power BI
-    with open(pbix_path, "rb") as pbix_file:
-        PBIXbyte = pbix_file.read()
 
-    st.download_button(
-        label="📥 Download Power BI Dashboard",
-        data=PBIXbyte,
-        file_name="Alzheimer_Dashboard.pbix",
-        mime='application/vnd.openxmlformats-officedocument.presentationml.presentation',
-    )
-            
 
-    # Reproducir el video de Power BI
-    st.video(video)
 
 elif choice == "🤖 Machine Learning":
     st.header("Machine Learning Model")
