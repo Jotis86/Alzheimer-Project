@@ -1426,8 +1426,7 @@ elif choice == "🧠 Deep Learning":
                 <div class="feature-text">
                     <div class="feature-title">Moderate Demented</div>
                     <div class="feature-description">
-                        Images showing more advanced neurodegeneration with significant brain atrophy, enlarged ventricles, 
-                        and cortical thinning. Moderate dementia typically presents with more substantial memory and cognitive deficits.
+                        Images showing advanced neurodegeneration with significant brain atrophy, enlarged ventricles, and cortical thinning. Moderate dementia presents with substantial memory and cognitive deficits.
                     </div>
                 </div>
             </div>
