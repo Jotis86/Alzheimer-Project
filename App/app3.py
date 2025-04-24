@@ -325,15 +325,97 @@ menu_options = [
 # Usar el radio button estándar de Streamlit
 choice = st.sidebar.radio("Navigate", menu_options, label_visibility="collapsed")
 
-# Tabla con los nombres de los miembros del proyecto
+# Estilo CSS para los miembros del proyecto
+st.sidebar.markdown("""
+<style>
+.team-section {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+.team-title {
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #2e7d32;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(27, 94, 32, 0.2);
+}
+.team-member {
+    padding: 8px 10px;
+    border-radius: 7px;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+    border-left: 3px solid #1b5e20;
+    background-color: rgba(165, 214, 167, 0.1);
+}
+.team-member:hover {
+    background-color: rgba(165, 214, 167, 0.25);
+    transform: translateX(3px);
+}
+.member-name {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #006064;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+}
+.member-name a {
+    text-decoration: none;
+    color: #006064;
+}
+.member-name a:hover {
+    text-decoration: underline;
+}
+.github-icon {
+    font-size: 0.8rem;
+    margin-left: 5px;
+    color: #546e7a;
+}
+.member-role {
+    font-size: 0.75rem;
+    color: #546e7a;
+    display: flex;
+    align-items: center;
+}
+.role-icon {
+    margin-right: 5px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Miembros del proyecto con mejor estilo visual
 st.sidebar.markdown('<div class="team-section">', unsafe_allow_html=True)
 st.sidebar.markdown('<div class="team-title">Project Members</div>', unsafe_allow_html=True)
+
+# Juan Duran - Data Analyst
 st.sidebar.markdown("""
-| Name | Role |
-|------|------|
-| [Juan Duran](https://github.com/Jotis86) | Data Analyst 📊 |
-| [Andrea Lafarga](https://github.com/AndreaLaHe) | Data Engineer 🛠️ |
+<div class="team-member">
+    <div class="member-name">
+        <a href="https://github.com/Jotis86" target="_blank">Juan Duran</a>
+        <span class="github-icon">&#xf09b;</span>
+    </div>
+    <div class="member-role">
+        <span class="role-icon">📊</span> Data Analyst
+    </div>
+</div>
 """, unsafe_allow_html=True)
+
+# Andrea Lafarga - Data Engineer
+st.sidebar.markdown("""
+<div class="team-member">
+    <div class="member-name">
+        <a href="https://github.com/AndreaLaHe" target="_blank">Andrea Lafarga</a>
+        <span class="github-icon">&#xf09b;</span>
+    </div>
+    <div class="member-role">
+        <span class="role-icon">🛠️</span> Data Engineer
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
 st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
 # Footer en el sidebar
