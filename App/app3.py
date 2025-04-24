@@ -309,7 +309,7 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 # Tabla con los nombres de los miembros del proyecto con estilo mejorado
-#st.sidebar.markdown('<div class="team-section">', unsafe_allow_html=True)
+st.sidebar.markdown('<div class="team-section">', unsafe_allow_html=True)
 st.sidebar.markdown('<div class="team-title">Project Members</div>', unsafe_allow_html=True)
 st.sidebar.markdown("""
 | Name | Role |
