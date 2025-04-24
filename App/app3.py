@@ -885,6 +885,103 @@ elif choice == "📊 Power BI":
 
 
 elif choice == "🤖 Machine Learning":
+    # Definición de estilos igual que en las otras secciones
+    st.markdown("""
+    <style>
+    /* Estilo para las tarjetas */
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 2rem;
+    }
+    .info-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border-top: 4px solid #1b5e20;
+        margin-bottom: 16px;
+    }
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #006064;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .card-title-icon {
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+    .card-content {
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+    }
+    .feature-icon {
+        font-size: 1.5rem;
+        margin-right: 15px;
+        color: #1b5e20;
+        min-width: 30px;
+        text-align: center;
+    }
+    .feature-text {
+        flex-grow: 1;
+    }
+    .feature-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #2e7d32;
+    }
+    .feature-description {
+        font-size: 0.9rem;
+        color: #666;
+    }
+    
+    /* Separador decorativo */
+    .divider {
+        height: 4px;
+        background: linear-gradient(90deg, #006064, #1b5e20, #a5d6a7);
+        border-radius: 2px;
+        margin: 2rem 0;
+    }
+    
+    /* Estilo para la sección de llamada a la acción */
+    .cta-card {
+        margin-top: 16px; 
+        text-align: center; 
+        background: linear-gradient(90deg, rgba(0,96,100,0.1) 0%, rgba(27,94,32,0.1) 100%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .cta-title {
+        font-size: 1.2rem; 
+        margin-bottom: 10px;
+        color: #006064;
+        font-weight: bold;
+    }
+    .cta-text {
+        color: #006064; 
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
     st.header("Machine Learning Model for Alzheimer's Detection")
     
     # Introducción con tarjeta estilo info-card
