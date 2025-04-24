@@ -451,51 +451,9 @@ st.sidebar.markdown("""
 
 
 if choice == "Home":
-    # Imagen de cabecera con estilo
+    # Estilo para las tarjetas y elementos visuales
     st.markdown("""
     <style>
-    .header-image-container {
-        position: relative;
-        margin-bottom: 2rem;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-    .header-image {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        opacity: 0.85;
-    }
-    .header-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, rgba(0,96,100,0.7) 0%, rgba(27,94,32,0.5) 100%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 0 2rem;
-    }
-    .header-title {
-        color: white;
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-    .header-subtitle {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1.25rem;
-        max-width: 800px;
-        margin: 0 auto;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    }
-    
     /* Estilo para las tarjetas */
     .card-container {
         display: flex;
@@ -510,6 +468,7 @@ if choice == "Home":
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
         border-top: 4px solid #1b5e20;
+        margin-bottom: 16px;
     }
     .info-card:hover {
         transform: translateY(-5px);
@@ -537,12 +496,6 @@ if choice == "Home":
         align-items: center;
         margin-bottom: 12px;
         padding-bottom: 12px;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    .feature-item:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
     }
     .feature-icon {
         font-size: 1.5rem;
@@ -571,17 +524,33 @@ if choice == "Home":
         border-radius: 2px;
         margin: 2rem 0;
     }
-    </style>
     
-    <div class="header-image-container">
-        <img class="header-image" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1789&q=80">
-        <div class="header-overlay">
-            <div class="header-title">🧠 Alzheimer AI: Detect & Support</div>
-            <div class="header-subtitle">Advanced tools for early detection and management of Alzheimer's disease using machine learning and deep learning techniques</div>
-        </div>
-    </div>
+    /* Estilo para la sección de llamada a la acción */
+    .cta-card {
+        margin-top: 16px; 
+        text-align: center; 
+        background: linear-gradient(90deg, rgba(0,96,100,0.1) 0%, rgba(27,94,32,0.1) 100%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .cta-title {
+        font-size: 1.2rem; 
+        margin-bottom: 10px;
+        color: #006064;
+        font-weight: bold;
+    }
+    .cta-text {
+        color: #006064; 
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+    }
+    </style>
     """, unsafe_allow_html=True)
 
+    # Título principal
+    st.header("Welcome to Alzheimer AI: Detection and Support")
+    
     # Sección de objetivos
     st.markdown('<div class="card-title"><span class="card-title-icon">🎯</span> Objectives of the Project</div>', unsafe_allow_html=True)
     
@@ -632,10 +601,11 @@ if choice == "Home":
     # Sección de características
     st.markdown('<div class="card-title"><span class="card-title-icon">✨</span> Features of This Application</div>', unsafe_allow_html=True)
     
-    # Primera fila de características
+    # Características con cada una en su propia tarjeta
     col1, col2 = st.columns(2)
     
     with col1:
+        # Tarjeta 1: Power BI
         st.markdown("""
         <div class="info-card">
             <div class="feature-item">
@@ -645,7 +615,12 @@ if choice == "Home":
                     <div class="feature-description">Visualize data and gain insights through interactive dashboards that help identify patterns and trends.</div>
                 </div>
             </div>
-            
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Tarjeta 2: Machine Learning
+        st.markdown("""
+        <div class="info-card">
             <div class="feature-item">
                 <div class="feature-icon">📊</div>
                 <div class="feature-text">
@@ -657,6 +632,7 @@ if choice == "Home":
         """, unsafe_allow_html=True)
         
     with col2:
+        # Tarjeta 3: Deep Learning
         st.markdown("""
         <div class="info-card">
             <div class="feature-item">
@@ -666,7 +642,12 @@ if choice == "Home":
                     <div class="feature-description">Upload MRI scans for automated analysis and detection of Alzheimer's patterns in brain images.</div>
                 </div>
             </div>
-            
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Tarjeta 4: Chat Bot
+        st.markdown("""
+        <div class="info-card">
             <div class="feature-item">
                 <div class="feature-icon">💬</div>
                 <div class="feature-text">
@@ -677,13 +658,13 @@ if choice == "Home":
         </div>
         """, unsafe_allow_html=True)
     
-    # Sección final con llamada a la acción
+    # Sección final con llamada a la acción - Con mejor legibilidad
     st.markdown("""
-    <div class="info-card" style="margin-top: 16px; text-align: center; background: linear-gradient(90deg, rgba(0,96,100,0.05) 0%, rgba(27,94,32,0.05) 100%);">
-        <div style="font-size: 1.2rem; margin-bottom: 10px;">
+    <div class="cta-card">
+        <div class="cta-title">
             <span style="font-size: 1.5rem;">🚀</span> Ready to explore?
         </div>
-        <div style="color: #444; margin-bottom: 15px;">
+        <div class="cta-text">
             Use the navigation menu on the left to discover all the tools and resources available for Alzheimer's detection and support.
         </div>
     </div>
