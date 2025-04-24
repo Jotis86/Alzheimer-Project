@@ -677,7 +677,7 @@ elif choice == "📊 Power BI":
     """, unsafe_allow_html=True)
 
     # Título principal
-    st.header("Power BI Dashboards")
+    #st.header("Power BI Dashboards")
     
     # Introducción con el mismo estilo de tarjeta info-card
     st.markdown("""
@@ -783,9 +783,9 @@ elif choice == "📊 Power BI":
                     <div class="feature-description">
                         <p>Powerful exploration capabilities:</p>
                         <ul style="margin-top: 10px; padding-left: 20px;">
-                            <li>Drill down into specific data points</li>
-                            <li>Explore trends over time</li>
-                            <li>Export visualizations and insights</li>
+                            <li>Drill down into specific data points efficiently</li>
+                            <li>Explore trends over time seamlessly</li>
+                            <li>Export visualizations and insights instantly</li>
                         </ul>
                     </div>
                 </div>
