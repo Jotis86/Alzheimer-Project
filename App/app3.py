@@ -982,7 +982,7 @@ elif choice == "🤖 Machine Learning":
     </style>
     """, unsafe_allow_html=True)
 
-    st.header("Machine Learning Model for Alzheimer's Detection")
+    #st.header("Machine Learning Model for Alzheimer's Detection")
     
     # Introducción con tarjeta estilo info-card
     st.markdown("""
