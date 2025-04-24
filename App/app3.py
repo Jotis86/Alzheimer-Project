@@ -145,35 +145,29 @@ st.markdown(
         background: linear-gradient(180deg, #006064, #1b5e20, #a5d6a7);
         color: white;
     }
-    /* Ajustar color del texto en el sidebar */
-    [data-testid="stSidebar"] .stRadio label {
-        color: white !important;
-        font-weight: bold;
-    }
-    /* Ajustar estilo de los botones de radio */
-    [data-testid="stSidebar"] .stRadio [role="radiogroup"] {
-        background-color: rgba(255, 255, 255, 0.2);
+    /* Estilo para el menú de navegación */
+    .stRadio > div {
+        background-color: rgba(255, 255, 255, 0.1);
         border-radius: 8px;
         padding: 10px;
     }
-    /* Estilo para el botón de GitHub */
-    .github-button {
-        background-color: rgba(255, 255, 255, 0.9); 
-        color: #006064; 
-        padding: 12px 24px; 
-        border: none; 
-        border-radius: 8px; 
-        cursor: pointer;
-        width: 100%;
-        font-weight: bold;
-        text-align: center;
-        margin: 15px 0;
-        transition: background-color 0.3s;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+    .stRadio label {
+        color: white !important;
+        font-weight: 500;
+        padding: 10px 15px;
+        margin: 5px 0;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
     }
-    .github-button:hover {
-        background-color: white;
+    
+    .stRadio label:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateX(5px);
     }
+    
     /* Estilo para la sección del equipo */
     .team-section {
         background-color: rgba(255, 255, 255, 0.9);
@@ -183,6 +177,7 @@ st.markdown(
         color: #333;
         margin-top: 20px;
     }
+    
     .team-title {
         text-align: center;
         border-bottom: 2px solid rgba(255, 255, 255, 0.5);
@@ -191,71 +186,111 @@ st.markdown(
         font-weight: bold;
         color: #006064;
     }
-    /* Estilos para la tabla */
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    /* Estilos para los enlaces */
-    [data-testid="stSidebar"] a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    .team-section a {
-        color: #006064;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
+    
+    /* Estilos para el banner del sidebar */
+    .sidebar-banner {
+        background: linear-gradient(135deg, #006064, #1b5e20);
+        border-radius: 10px;
+        padding: 20px 15px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
     }
     
-    /* Estilo personalizado para el menú de navegación */
-    .sidebar-menu {
-        padding: 0;
-        margin-top: 20px;
+    .sidebar-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M80,20 Q100,40 80,60 Q60,80 40,60 Q20,40 40,20 Q60,0 80,20 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/></svg>');
+        background-size: 150px;
+        opacity: 0.3;
     }
-    .menu-item {
-        list-style-type: none;
-        padding: 12px 15px;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        transition: all 0.3s;
+    
+    .banner-logo {
+        font-size: 32px;
+        margin-bottom: 5px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .banner-title {
         color: white;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-left: 4px solid transparent;
-        display: flex;
-        align-items: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
-    .menu-item:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-left: 4px solid #a5d6a7;
-        transform: translateX(5px);
+    
+    .banner-subtitle {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 14px;
+        font-style: italic;
     }
-    .menu-item.active {
-        background-color: rgba(255, 255, 255, 0.25);
-        border-left: 4px solid #a5d6a7;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    .banner-dots {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 3px, transparent 4px);
+        background-size: 30px 30px;
+        transform: rotate(45deg);
+        top: -75px;
+        right: -75px;
+        opacity: 0.4;
     }
-    .menu-icon {
-        font-size: 18px;
-        margin-right: 10px;
-        width: 25px;
+    
+    /* Estilo para el footer */
+    .sidebar-footer {
+        background: linear-gradient(180deg, rgba(0, 96, 100, 0.1), rgba(0, 96, 100, 0.3));
+        color: white;
         text-align: center;
+        padding: 15px 10px;
+        font-size: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        margin-top: 20px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
     }
-    .menu-text {
-        font-weight: 500;
+    
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
-
-    /* Ocultar el radio button estándar */
-    [data-testid="stRadio"] > div {
-        display: none;
+    
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+    }
+    
+    .footer-links a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+        color: #a5d6a7;
+        transform: translateY(-2px);
+    }
+    
+    .footer-text {
+        opacity: 0.8;
+    }
+    
+    .footer-divider {
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+        margin: 5px auto;
+        border-radius: 2px;
     }
     </style>
     
@@ -267,70 +302,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Menú de navegación con iconos
-#st.sidebar.image(navigation_image_path, use_container_width=True)
-
-
-
-# Estilo y creación del banner personalizado para el sidebar
+# Banner personalizado para el sidebar
 st.sidebar.markdown("""
-<style>
-.sidebar-banner {
-    background: linear-gradient(135deg, #006064, #1b5e20);
-    border-radius: 10px;
-    padding: 20px 15px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.sidebar-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M80,20 Q100,40 80,60 Q60,80 40,60 Q20,40 40,20 Q60,0 80,20 Z" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/></svg>');
-    background-size: 150px;
-    opacity: 0.3;
-}
-
-.banner-logo {
-    font-size: 32px;
-    margin-bottom: 5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.banner-title {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.banner-subtitle {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 14px;
-    font-style: italic;
-}
-
-.banner-dots {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 3px, transparent 4px);
-    background-size: 30px 30px;
-    transform: rotate(45deg);
-    top: -75px;
-    right: -75px;
-    opacity: 0.4;
-}
-</style>
-
 <div class="sidebar-banner">
     <div class="banner-dots"></div>
     <div class="banner-logo">🧠</div>
@@ -349,14 +322,10 @@ menu_options = [
     "📚 Other Resources"
 ]
 
-
 # Usar el radio button estándar de Streamlit
 choice = st.sidebar.radio("Navigate", menu_options, label_visibility="collapsed")
 
-# Extraer el nombre para usar en condiciones
-section = choice.split(" ", 1)[1] if " " in choice else choice
-
-# Tabla con los nombres de los miembros del proyecto con estilo mejorado
+# Tabla con los nombres de los miembros del proyecto
 st.sidebar.markdown('<div class="team-section">', unsafe_allow_html=True)
 st.sidebar.markdown('<div class="team-title">Project Members</div>', unsafe_allow_html=True)
 st.sidebar.markdown("""
@@ -367,60 +336,8 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 st.sidebar.markdown('</div>', unsafe_allow_html=True)
 
-
-# Añadir un footer bonito al sidebar
+# Footer en el sidebar
 st.sidebar.markdown("""
-<style>
-.sidebar-footer {
-    background: linear-gradient(180deg, rgba(0, 96, 100, 0.1), rgba(0, 96, 100, 0.3));
-    color: white;
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5px;
-}
-
-.footer-links a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-.footer-links a:hover {
-    color: #a5d6a7;
-    transform: translateY(-2px);
-}
-
-.footer-text {
-    opacity: 0.8;
-}
-
-.footer-divider {
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-    margin: 5px auto;
-    border-radius: 2px;
-}
-</style>
-
 <div class="sidebar-footer">
     <div class="footer-content">
         <div class="footer-links">
@@ -429,7 +346,7 @@ st.sidebar.markdown("""
         </div>
         <div class="footer-divider"></div>
         <div class="footer-text">
-            © 2025 Alzheimer AI Project • Made with ❤️ by Data lovers
+            © 2023 Alzheimer AI Project • Made with ❤️ by Data lovers
         </div>
     </div>
 </div>
