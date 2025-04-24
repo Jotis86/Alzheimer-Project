@@ -451,24 +451,246 @@ st.sidebar.markdown("""
 
 
 if choice == "Home":
-    st.header("Welcome to Alzheimer AI: Detection and Support")
+    # Imagen de cabecera con estilo
     st.markdown("""
-    This project aims to assist in the early detection of Alzheimer's disease using advanced machine learning and deep learning techniques. 🧠💡
+    <style>
+    .header-image-container {
+        position: relative;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .header-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        opacity: 0.85;
+    }
+    .header-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(0,96,100,0.7) 0%, rgba(27,94,32,0.5) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 2rem;
+    }
+    .header-title {
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .header-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.25rem;
+        max-width: 800px;
+        margin: 0 auto;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
     
-    ### Objectives of the Project:
-    - **Early Detection**: Utilize state-of-the-art models to detect Alzheimer's disease at an early stage. 🕵️‍♂️
-    - **Accessibility**: Provide an easy-to-use interface for healthcare professionals and researchers. 🌐
-    - **Education**: Raise awareness and educate users about Alzheimer's disease and its early signs. 📚
+    /* Estilo para las tarjetas */
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 2rem;
+    }
+    .info-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border-top: 4px solid #1b5e20;
+    }
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #006064;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .card-title-icon {
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+    .card-content {
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .feature-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .feature-icon {
+        font-size: 1.5rem;
+        margin-right: 15px;
+        color: #1b5e20;
+        min-width: 30px;
+        text-align: center;
+    }
+    .feature-text {
+        flex-grow: 1;
+    }
+    .feature-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #2e7d32;
+    }
+    .feature-description {
+        font-size: 0.9rem;
+        color: #666;
+    }
+    
+    /* Separador decorativo */
+    .divider {
+        height: 4px;
+        background: linear-gradient(90deg, #006064, #1b5e20, #a5d6a7);
+        border-radius: 2px;
+        margin: 2rem 0;
+    }
+    </style>
+    
+    <div class="header-image-container">
+        <img class="header-image" src="https://images.unsplash.com/photo-1559757175-5700dde675bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1789&q=80">
+        <div class="header-overlay">
+            <div class="header-title">🧠 Alzheimer AI: Detect & Support</div>
+            <div class="header-subtitle">Advanced tools for early detection and management of Alzheimer's disease using machine learning and deep learning techniques</div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-    ### Features of This Application:
-    - **Power BI Dashboards**: Visualize data and gain insights through interactive dashboards. 📈
-    - **Machine Learning Model**: Input various clinical and demographic features to get a prediction. 📊
-    - **Deep Learning Model**: Predict Alzheimer’s from MRI scans. 🖼️🔍
-    - **Chat Bot**: Get answers to your questions and support related to Alzheimer's disease. 💬
-    - **Additional Resources**: Access research papers, support groups, and more. 📑
+    # Sección de objetivos
+    st.markdown('<div class="card-title"><span class="card-title-icon">🎯</span> Objectives of the Project</div>', unsafe_allow_html=True)
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🕵️‍♂️</div>
+                <div class="feature-text">
+                    <div class="feature-title">Early Detection</div>
+                    <div class="feature-description">Utilize state-of-the-art models to detect Alzheimer's disease at an early stage.</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col2:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🌐</div>
+                <div class="feature-text">
+                    <div class="feature-title">Accessibility</div>
+                    <div class="feature-description">Provide an easy-to-use interface for healthcare professionals and researchers.</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col3:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">📚</div>
+                <div class="feature-text">
+                    <div class="feature-title">Education</div>
+                    <div class="feature-description">Raise awareness and educate users about Alzheimer's disease and its early signs.</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Separador decorativo
+    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+    
+    # Sección de características
+    st.markdown('<div class="card-title"><span class="card-title-icon">✨</span> Features of This Application</div>', unsafe_allow_html=True)
+    
+    # Primera fila de características
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">📈</div>
+                <div class="feature-text">
+                    <div class="feature-title">Power BI Dashboards</div>
+                    <div class="feature-description">Visualize data and gain insights through interactive dashboards that help identify patterns and trends.</div>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">📊</div>
+                <div class="feature-text">
+                    <div class="feature-title">Machine Learning Model</div>
+                    <div class="feature-description">Input various clinical and demographic features to get a prediction based on advanced algorithms.</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col2:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🖼️</div>
+                <div class="feature-text">
+                    <div class="feature-title">Deep Learning Model</div>
+                    <div class="feature-description">Upload MRI scans for automated analysis and detection of Alzheimer's patterns in brain images.</div>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">💬</div>
+                <div class="feature-text">
+                    <div class="feature-title">Chat Bot</div>
+                    <div class="feature-description">Get answers to your questions and support related to Alzheimer's disease from our AI assistant.</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Sección final con llamada a la acción
+    st.markdown("""
+    <div class="info-card" style="margin-top: 16px; text-align: center; background: linear-gradient(90deg, rgba(0,96,100,0.05) 0%, rgba(27,94,32,0.05) 100%);">
+        <div style="font-size: 1.2rem; margin-bottom: 10px;">
+            <span style="font-size: 1.5rem;">🚀</span> Ready to explore?
+        </div>
+        <div style="color: #444; margin-bottom: 15px;">
+            Use the navigation menu on the left to discover all the tools and resources available for Alzheimer's detection and support.
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
-    Explore the different sections to learn more about the models, interact with a chat bot, and access additional resources. 🚀
-    """)
+
+
 
 elif choice == "Power BI":
     st.header("Power BI")
