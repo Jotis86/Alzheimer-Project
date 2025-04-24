@@ -325,7 +325,7 @@ menu_options = [
 # Usar el radio button estándar de Streamlit
 choice = st.sidebar.radio("Navigate", menu_options, label_visibility="collapsed")
 
-# Estilo CSS para los miembros del proyecto
+# Estilo CSS para los miembros del proyecto - versión corregida
 st.sidebar.markdown("""
 <style>
 .team-section {
@@ -365,12 +365,14 @@ st.sidebar.markdown("""
 .member-name a {
     text-decoration: none;
     color: #006064;
+    display: flex;
+    align-items: center;
 }
 .member-name a:hover {
     text-decoration: underline;
 }
-.github-icon {
-    font-size: 0.8rem;
+.github-link {
+    font-size: 0.75rem;
     margin-left: 5px;
     color: #546e7a;
 }
@@ -379,6 +381,7 @@ st.sidebar.markdown("""
     color: #546e7a;
     display: flex;
     align-items: center;
+    margin-top: 3px;
 }
 .role-icon {
     margin-right: 5px;
@@ -386,7 +389,7 @@ st.sidebar.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Miembros del proyecto con mejor estilo visual
+# Miembros del proyecto con mejor estilo visual - corregido
 st.sidebar.markdown('<div class="team-section">', unsafe_allow_html=True)
 st.sidebar.markdown('<div class="team-title">Project Members</div>', unsafe_allow_html=True)
 
@@ -394,8 +397,10 @@ st.sidebar.markdown('<div class="team-title">Project Members</div>', unsafe_allo
 st.sidebar.markdown("""
 <div class="team-member">
     <div class="member-name">
-        <a href="https://github.com/Jotis86" target="_blank">Juan Duran</a>
-        <span class="github-icon">&#xf09b;</span>
+        <a href="https://github.com/Jotis86" target="_blank">
+            Juan Duran 
+            <span class="github-link">GitHub</span>
+        </a>
     </div>
     <div class="member-role">
         <span class="role-icon">📊</span> Data Analyst
@@ -407,8 +412,10 @@ st.sidebar.markdown("""
 st.sidebar.markdown("""
 <div class="team-member">
     <div class="member-name">
-        <a href="https://github.com/AndreaLaHe" target="_blank">Andrea Lafarga</a>
-        <span class="github-icon">&#xf09b;</span>
+        <a href="https://github.com/AndreaLaHe" target="_blank">
+            Andrea Lafarga
+            <span class="github-link">GitHub</span>
+        </a>
     </div>
     <div class="member-role">
         <span class="role-icon">🛠️</span> Data Engineer
