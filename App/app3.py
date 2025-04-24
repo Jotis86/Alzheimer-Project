@@ -270,15 +270,7 @@ st.markdown(
 # Menú de navegación con iconos
 #st.sidebar.image(navigation_image_path, use_container_width=True)
 
-# Menú con opciones e iconos
-menu_options = [
-    {"icon": "🏠", "name": "Home"},
-    {"icon": "📊", "name": "Power BI"},
-    {"icon": "🤖", "name": "Machine Learning"},
-    {"icon": "🧠", "name": "Deep Learning"},
-    {"icon": "💬", "name": "Chat Bot"},
-    {"icon": "📚", "name": "Other Resources"}
-]
+
 
 # Estilo y creación del banner personalizado para el sidebar
 st.sidebar.markdown("""
@@ -347,26 +339,22 @@ st.sidebar.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# Menú simplificado con opciones e iconos
+menu_options = [
+    "🏠 Home",
+    "📊 Power BI",
+    "🤖 Machine Learning", 
+    "🧠 Deep Learning",
+    "💬 Chat Bot",
+    "📚 Other Resources"
+]
 
 
-# Crear los radiobuttons ocultos para mantener la funcionalidad
-choice = st.sidebar.radio("Navigate", [option["name"] for option in menu_options], label_visibility="collapsed")
+# Usar el radio button estándar de Streamlit
+choice = st.sidebar.radio("Navigate", menu_options, label_visibility="collapsed")
 
-# Generar el menú visual personalizado
-st.sidebar.markdown('<div class="sidebar-menu">', unsafe_allow_html=True)
-for option in menu_options:
-    active_class = "active" if choice == option["name"] else ""
-    st.sidebar.markdown(
-        f"""
-        <div class="menu-item {active_class}" 
-             onclick="document.querySelectorAll('[data-testid=stRadio] label')[{menu_options.index(option)}].click();">
-            <div class="menu-icon">{option["icon"]}</div>
-            <div class="menu-text">{option["name"]}</div>
-        </div>
-        """, 
-        unsafe_allow_html=True
-    )
-st.sidebar.markdown('</div>', unsafe_allow_html=True)
+# Extraer el nombre para usar en condiciones
+section = choice.split(" ", 1)[1] if " " in choice else choice
 
 # Tabla con los nombres de los miembros del proyecto con estilo mejorado
 st.sidebar.markdown('<div class="team-section">', unsafe_allow_html=True)
@@ -450,7 +438,7 @@ st.sidebar.markdown("""
 
 
 
-if choice == "Home":
+if choice == "🏠 Home":
     # Estilo para las tarjetas y elementos visuales
     st.markdown("""
     <style>
@@ -673,7 +661,7 @@ if choice == "Home":
 
 
 
-elif choice == "Power BI":
+elif choice == "📊 Power BI":
     st.header("Power BI")
     st.markdown("""
     This section features Power BI dashboards and reports to provide insights and visualizations related to Alzheimer's disease.
