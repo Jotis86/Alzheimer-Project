@@ -579,7 +579,7 @@ if choice == "🏠 Home":
 
 
 elif choice == "📊 Power BI":
-    st.header("Power BI Dashboards")
+    #st.header("Power BI Dashboards")
     
     # Introducción con estilo
     st.markdown("""
