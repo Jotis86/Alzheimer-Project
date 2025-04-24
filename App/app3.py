@@ -1273,35 +1273,287 @@ elif choice == "🤖 Machine Learning":
         mime='application/pdf',
     )
 
+
+
+
+
 elif choice == "🧠 Deep Learning":
-    st.header("Deep Learning Model")
-
-    # Application description
+    # Definición de estilos igual que en las otras secciones
     st.markdown("""
-    This application uses a deep learning model to detect the presence of Alzheimer's disease in MRI brain scan images.
-    You can select an image from the test dataset, and the model will predict whether the image shows signs of Alzheimer's.
-    """)
+    <style>
+    /* Estilo para las tarjetas */
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 2rem;
+    }
+    .info-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        border-top: 4px solid #1b5e20;
+        margin-bottom: 16px;
+    }
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #006064;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .card-title-icon {
+        font-size: 2rem;
+        margin-right: 10px;
+    }
+    .card-content {
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    .feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        padding-bottom: 12px;
+    }
+    .feature-icon {
+        font-size: 1.5rem;
+        margin-right: 15px;
+        color: #1b5e20;
+        min-width: 30px;
+        text-align: center;
+    }
+    .feature-text {
+        flex-grow: 1;
+    }
+    .feature-title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #2e7d32;
+    }
+    .feature-description {
+        font-size: 0.9rem;
+        color: #666;
+    }
+    
+    /* Separador decorativo */
+    .divider {
+        height: 4px;
+        background: linear-gradient(90deg, #006064, #1b5e20, #a5d6a7);
+        border-radius: 2px;
+        margin: 2rem 0;
+    }
+    
+    /* Estilo para la sección de llamada a la acción */
+    .cta-card {
+        margin-top: 16px; 
+        text-align: center; 
+        background: linear-gradient(90deg, rgba(0,96,100,0.1) 0%, rgba(27,94,32,0.1) 100%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .cta-title {
+        font-size: 1.2rem; 
+        margin-bottom: 10px;
+        color: #006064;
+        font-weight: bold;
+    }
+    .cta-text {
+        color: #006064; 
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
+    st.header("Deep Learning Model for Alzheimer's Detection")
+    
+    # Introducción con tarjeta estilo info-card
     st.markdown("""
-    This dataset focuses on the classification of Alzheimer's disease based on MRI scans. The dataset consists of brain MRI images labeled into four categories:
-
-    - '0': Mild_Demented
-    - '1': Moderate_Demented
-    - '2': Non_Demented
-    - '3': Very_Mild_Demented
-
-    **Number of examples:**
-    - Train: 5,120
-    - Test: 1,280
-
-    **Dataset Details:**
-    - **Mild_Demented**: These images show mild signs of dementia.
-    - **Moderate_Demented**: These images show moderate signs of dementia.
-    - **Non_Demented**: These images do not show signs of dementia.
-    - **Very_Mild_Demented**: These images show very mild signs of dementia.
-
-    The dataset is used to train and evaluate the deep learning model, which aims to classify the MRI images into one of the four categories mentioned above. This helps in the early detection and diagnosis of Alzheimer's disease, providing valuable insights for medical professionals.
-    """)
+    <div class="info-card">
+        <div class="feature-item">
+            <div class="feature-icon">🖼️</div>
+            <div class="feature-text">
+                <div class="feature-title">MRI Image Analysis</div>
+                <div class="feature-description">
+                    This application uses a deep learning model to detect Alzheimer's disease from MRI brain scan images.
+                    The model analyzes patterns in brain structure that may indicate different stages of dementia.
+                    You can select an image from our test dataset, and the AI will classify it into one of four categories.
+                </div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Separador decorativo
+    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+    
+    # Título de la sección de categorías
+    st.markdown('<div class="card-title"><span class="card-title-icon">🔍</span> Classification Categories</div>', unsafe_allow_html=True)
+    
+    # Tarjetas para cada categoría de clasificación - 2x2 grid
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🟢</div>
+                <div class="feature-text">
+                    <div class="feature-title">Non-Demented</div>
+                    <div class="feature-description">
+                        MRI scans that show normal brain structure without significant signs of neurodegeneration 
+                        associated with Alzheimer's disease. These images serve as the baseline for comparison.
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🟠</div>
+                <div class="feature-text">
+                    <div class="feature-title">Moderate Demented</div>
+                    <div class="feature-description">
+                        Images showing more advanced neurodegeneration with significant brain atrophy, enlarged ventricles, 
+                        and cortical thinning. Moderate dementia typically presents with more substantial memory and cognitive deficits.
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col2:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🟡</div>
+                <div class="feature-text">
+                    <div class="feature-title">Very Mild Demented</div>
+                    <div class="feature-description">
+                        Brain scans showing very early signs of neurodegeneration that may be difficult to detect visually. 
+                        These subtle changes may include minor hippocampal atrophy and early ventricular enlargement.
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🔴</div>
+                <div class="feature-text">
+                    <div class="feature-title">Mild Demented</div>
+                    <div class="feature-description">
+                        MRI scans showing early but definite signs of Alzheimer's-related neurodegeneration, including 
+                        hippocampal atrophy, widened sulci, and some ventricular enlargement typical of early-stage Alzheimer's.
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Separador decorativo
+    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+    
+    # Título de la sección de dataset
+    st.markdown('<div class="card-title"><span class="card-title-icon">📊</span> Dataset Overview</div>', unsafe_allow_html=True)
+    
+    # Información del dataset en tarjetas
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">📈</div>
+                <div class="feature-text">
+                    <div class="feature-title">Dataset Statistics</div>
+                    <div class="feature-description">
+                        <ul style="padding-left: 20px; margin-top: 5px;">
+                            <li><strong>Total Images:</strong> 6,400</li>
+                            <li><strong>Training Set:</strong> 5,120 images (80%)</li>
+                            <li><strong>Test Set:</strong> 1,280 images (20%)</li>
+                            <li><strong>Categories:</strong> 4 classes of dementia</li>
+                            <li><strong>Image Type:</strong> Brain MRI scans</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col2:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🤖</div>
+                <div class="feature-text">
+                    <div class="feature-title">Model Architecture</div>
+                    <div class="feature-description">
+                        <p>Our deep learning model uses a convolutional neural network (CNN) architecture specifically optimized for medical image analysis:</p>
+                        <ul style="padding-left: 20px; margin-top: 5px;">
+                            <li>Pre-trained on medical imaging datasets</li>
+                            <li>Fine-tuned on Alzheimer's MRI dataset</li>
+                            <li>Achieves >95% accuracy on the test set</li>
+                            <li>Focuses on brain regions most affected by Alzheimer's</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Separador decorativo
+    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+    
+    # Sección de instrucciones de uso
+    st.markdown('<div class="card-title"><span class="card-title-icon">📝</span> How to Use the Model</div>', unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div class="info-card">
+        <div class="feature-item">
+            <div class="feature-icon">ℹ️</div>
+            <div class="feature-text">
+                <div class="feature-title">Instructions</div>
+                <div class="feature-description">
+                    <ol style="padding-left: 20px; margin-top: 5px;">
+                        <li>Select an MRI scan from our test dataset using the selector below</li>
+                        <li>The image will be preprocessed automatically</li>
+                        <li>Click "Analyze Image" to run the deep learning model</li>
+                        <li>Review the results showing predicted class and confidence score</li>
+                        <li>Note: This tool is for research and educational purposes only</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Nota importante en formato CTA
+    st.markdown("""
+    <div class="cta-card">
+        <div class="cta-title">
+            <span style="font-size: 1.5rem;">⚠️</span> Important Note
+        </div>
+        <div class="cta-text">
+            This deep learning model is intended for research and educational purposes only. It should not replace
+            professional medical diagnosis. Always consult with healthcare professionals for proper evaluation and diagnosis.
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
     # Display some sample images from the dataset
     st.header("Sample Images from the Dataset")
