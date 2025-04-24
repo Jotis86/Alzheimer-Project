@@ -679,16 +679,19 @@ elif choice == "📊 Power BI":
     # Título principal
     st.header("Power BI Dashboards")
     
-    # Introducción con el mismo estilo CTA de la página Home
+    # Introducción con el mismo estilo de tarjeta info-card
     st.markdown("""
-    <div class="cta-card" style="text-align: left;">
-        <div class="cta-title">
-            <span style="font-size: 1.5rem;">📊</span> Interactive Data Visualizations
-        </div>
-        <div class="cta-text">
-            Explore our comprehensive Power BI dashboards that provide deep insights into Alzheimer's disease data.
-            These interactive visualizations help healthcare professionals and researchers better understand patterns,
-            trends, and correlations in the data.
+    <div class="info-card">
+        <div class="feature-item">
+            <div class="feature-icon">📊</div>
+            <div class="feature-text">
+                <div class="feature-title">Interactive Data Visualizations</div>
+                <div class="feature-description">
+                    Explore our comprehensive Power BI dashboards that provide deep insights into Alzheimer's disease data.
+                    These interactive visualizations help healthcare professionals and researchers better understand patterns,
+                    trends, and correlations in the data.
+                </div>
+            </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -838,7 +841,13 @@ elif choice == "📊 Power BI":
     with col2:
         # Tarjeta para el botón de descarga
         st.markdown("""
-        <div class="info-card" style="display: flex; justify-content: center; align-items: center; height: 100%;">
+        <div class="info-card" style="text-align: center;">
+            <div style="font-weight: 600; color: #2e7d32; margin-bottom: 15px;">
+                Download Dashboard
+            </div>
+            <div style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">
+                Click the button below to get the full Power BI file
+            </div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -857,13 +866,16 @@ elif choice == "📊 Power BI":
     
     # Nota final con estilo CTA como en Home
     st.markdown("""
-    <div class="cta-card">
-        <div class="cta-title">
-            <span style="font-size: 1.5rem;">ℹ️</span> Important Note
-        </div>
-        <div class="cta-text">
-            To open these files, you'll need <a href="https://powerbi.microsoft.com/desktop/" target="_blank">Power BI Desktop</a> 
-            installed on your computer. The application is free and available for Windows.
+    <div class="info-card">
+        <div class="feature-item">
+            <div class="feature-icon">ℹ️</div>
+            <div class="feature-text">
+                <div class="feature-title">Important Note</div>
+                <div class="feature-description">
+                    To open these files, you'll need <a href="https://powerbi.microsoft.com/desktop/" target="_blank">Power BI Desktop</a> 
+                    installed on your computer. The application is free and available for Windows.
+                </div>
+            </div>
         </div>
     </div>
     """, unsafe_allow_html=True)
