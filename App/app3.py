@@ -908,14 +908,10 @@ elif choice == "🤖 Machine Learning":
     st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
     
     # Título de la sección de variables
-    st.markdown('<div class="card-title"><span class="card-title-icon">📋</span> Input Variables</div>', unsafe_allow_html=True)
+    st.markdown('<div class="card-title"><span class="card-title-icon">📋</span> Key Variables for Prediction</div>', unsafe_allow_html=True)
     
-    # Agrupar las variables en categorías lógicas y mostrarlas en tarjetas separadas
-    
-    # Evaluación Cognitiva y Funcional
-    st.markdown('<div style="font-size: 1.2rem; font-weight: 500; color: #2e7d32; margin: 15px 0 10px 0;">Cognitive & Functional Assessment</div>', unsafe_allow_html=True)
-    
-    col1, col2 = st.columns(2)
+    # Variables Cognitivas - 3 columnas como en Home
+    col1, col2, col3 = st.columns(3)
     
     with col1:
         st.markdown("""
@@ -923,33 +919,8 @@ elif choice == "🤖 Machine Learning":
             <div class="feature-item">
                 <div class="feature-icon">🧩</div>
                 <div class="feature-text">
-                    <div class="feature-title">MMSE</div>
-                    <div class="feature-description">
-                        <strong>Mini-Mental State Examination score</strong><br>
-                        Range: 0-30 (Lower scores indicate cognitive impairment)<br>
-                        <div style="background-color: rgba(46, 125, 50, 0.1); padding: 8px; border-radius: 5px; margin-top: 8px;">
-                            <span style="color: #2e7d32;">📉 Score 30: Normal cognition</span><br>
-                            <span style="color: #FF9800;">📉 Score 20-25: Mild impairment</span><br>
-                            <span style="color: #F44336;">📉 Score < 20: Severe impairment</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("""
-        <div class="info-card">
-            <div class="feature-item">
-                <div class="feature-icon">🧠</div>
-                <div class="feature-text">
-                    <div class="feature-title">Memory & Behavior</div>
-                    <div class="feature-description">
-                        <strong>MemoryComplaints</strong>: Presence of memory complaints<br>
-                        0: No complaints | 1: Has complaints<br><br>
-                        <strong>BehavioralProblems</strong>: Presence of behavioral issues<br>
-                        0: No problems | 1: Has problems
-                    </div>
+                    <div class="feature-title">MMSE Score</div>
+                    <div class="feature-description">Mini-Mental State Examination score (0-30). Lower scores indicate cognitive impairment.</div>
                 </div>
             </div>
         </div>
@@ -959,104 +930,113 @@ elif choice == "🤖 Machine Learning":
         st.markdown("""
         <div class="info-card">
             <div class="feature-item">
-                <div class="feature-icon">🔍</div>
+                <div class="feature-icon">🔄</div>
                 <div class="feature-text">
-                    <div class="feature-title">Functional Assessment</div>
-                    <div class="feature-description">
-                        <strong>FunctionalAssessment</strong>: Score ranging from 0 to 10<br>
-                        Lower scores indicate greater impairment in daily functions<br><br>
-                        <strong>ADL</strong>: Activities of Daily Living score (0-10)<br>
-                        Measures ability to perform everyday tasks independently
-                    </div>
+                    <div class="feature-title">ADL Score</div>
+                    <div class="feature-description">Activities of Daily Living score (0-10). Measures ability to perform everyday tasks independently.</div>
                 </div>
             </div>
         </div>
         """, unsafe_allow_html=True)
         
+    with col3:
         st.markdown("""
         <div class="info-card">
             <div class="feature-item">
-                <div class="feature-icon">🎓</div>
+                <div class="feature-icon">📝</div>
                 <div class="feature-text">
-                    <div class="feature-title">Education Level</div>
-                    <div class="feature-description">
-                        <strong>Education coding:</strong><br>
-                        <ul style="padding-left: 20px; margin-top: 5px;">
-                            <li>0: None</li>
-                            <li>1: High School</li>
-                            <li>2: Bachelor's</li>
-                            <li>3: Higher (Master's/PhD)</li>
-                        </ul>
-                    </div>
+                    <div class="feature-title">Functional Assessment</div>
+                    <div class="feature-description">Score ranging from 0 to 10. Lower scores indicate greater impairment in daily functions.</div>
                 </div>
             </div>
         </div>
         """, unsafe_allow_html=True)
     
-    # Health Metrics
-    st.markdown('<div style="font-size: 1.2rem; font-weight: 500; color: #2e7d32; margin: 15px 0 10px 0;">Health & Lifestyle Metrics</div>', unsafe_allow_html=True)
+    # Separador pequeño
+    st.markdown('<div style="height: 20px;"></div>', unsafe_allow_html=True)
     
+    # Segunda fila de variables - 3 columnas
     col1, col2, col3 = st.columns(3)
     
     with col1:
         st.markdown("""
         <div class="info-card">
             <div class="feature-item">
-                <div class="feature-icon">💤</div>
-                <div class="feature-text">
-                    <div class="feature-title">Sleep Quality</div>
-                    <div class="feature-description">
-                        Score ranging from 1 to 10<br>
-                        Higher scores indicate better sleep quality<br>
-                        <div style="height: 5px; background: linear-gradient(90deg, #F44336, #FFC107, #4CAF50); border-radius: 5px; margin: 8px 0;"></div>
-                        <div style="display: flex; justify-content: space-between;">
-                            <span style="font-size: 0.8rem;">Poor</span>
-                            <span style="font-size: 0.8rem;">Good</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown("""
-        <div class="info-card">
-            <div class="feature-item">
                 <div class="feature-icon">❤️</div>
                 <div class="feature-text">
                     <div class="feature-title">Blood Pressure</div>
-                    <div class="feature-description">
-                        <strong>SystolicBP</strong>: 90-180 mmHg<br>
-                        <strong>DiastolicBP</strong>: 60-120 mmHg<br>
-                        <div style="background-color: rgba(46, 125, 50, 0.1); padding: 8px; border-radius: 5px; margin-top: 8px;">
-                            <span style="font-size: 0.85rem;">Normal: <120/80 mmHg</span><br>
-                            <span style="font-size: 0.85rem;">Elevated: 120-129/<80 mmHg</span><br>
-                            <span style="font-size: 0.85rem;">High: ≥130/≥80 mmHg</span>
-                        </div>
-                    </div>
+                    <div class="feature-description">Systolic (90-180 mmHg) and Diastolic (60-120 mmHg) blood pressure measurements.</div>
                 </div>
             </div>
         </div>
         """, unsafe_allow_html=True)
-    
-    with col3:
+        
+    with col2:
         st.markdown("""
         <div class="info-card">
             <div class="feature-item">
                 <div class="feature-icon">🩸</div>
                 <div class="feature-text">
-                    <div class="feature-title">Cholesterol</div>
-                    <div class="feature-description">
-                        <strong>CholesterolHDL</strong><br>
-                        HDL "good" cholesterol levels<br>
-                        Range: 20-100 mg/dL<br>
-                        <div style="background-color: rgba(46, 125, 50, 0.1); padding: 8px; border-radius: 5px; margin-top: 8px;">
-                            <span style="font-size: 0.85rem;">Low: <40 mg/dL for men</span><br>
-                            <span style="font-size: 0.85rem;">Low: <50 mg/dL for women</span><br>
-                            <span style="font-size: 0.85rem;">Ideal: ≥60 mg/dL</span>
-                        </div>
-                    </div>
+                    <div class="feature-title">HDL Cholesterol</div>
+                    <div class="feature-description">HDL "good" cholesterol levels (20-100 mg/dL). Higher levels are generally better.</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col3:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">💤</div>
+                <div class="feature-text">
+                    <div class="feature-title">Sleep Quality</div>
+                    <div class="feature-description">Sleep quality score (1-10). Higher scores indicate better sleep quality and patterns.</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Separador pequeño
+    st.markdown('<div style="height: 20px;"></div>', unsafe_allow_html=True)
+    
+    # Tercera fila de variables - 3 columnas
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🎓</div>
+                <div class="feature-text">
+                    <div class="feature-title">Education Level</div>
+                    <div class="feature-description">0: None, 1: High School, 2: Bachelor's, 3: Higher education (Master's/PhD).</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col2:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🧠</div>
+                <div class="feature-text">
+                    <div class="feature-title">Memory Complaints</div>
+                    <div class="feature-description">Presence of memory complaints reported by patient or caregiver (0: No, 1: Yes).</div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col3:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">😔</div>
+                <div class="feature-text">
+                    <div class="feature-title">Behavioral Problems</div>
+                    <div class="feature-description">Presence of behavioral issues like agitation, aggression, or mood changes (0: No, 1: Yes).</div>
                 </div>
             </div>
         </div>
@@ -1065,20 +1045,19 @@ elif choice == "🤖 Machine Learning":
     # Separador decorativo
     st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
     
-    # Nota importante
+    # Sección de predicción
+    st.markdown('<div class="card-title"><span class="card-title-icon">🔮</span> Make a Prediction</div>', unsafe_allow_html=True)
+    
+    # Introducción para la sección de predicción
     st.markdown("""
     <div class="info-card">
         <div class="feature-item">
             <div class="feature-icon">ℹ️</div>
             <div class="feature-text">
-                <div class="feature-title">How to Use This Model</div>
+                <div class="feature-title">How to Use</div>
                 <div class="feature-description">
-                    <ol style="padding-left: 20px; margin-top: 5px;">
-                        <li>Enter your values in the input fields below</li>
-                        <li>Click the "Predict" button to run the model</li>
-                        <li>Review the prediction results and confidence score</li>
-                        <li>Note that this tool is for informational purposes only and should not replace professional medical advice</li>
-                    </ol>
+                    Enter the values for each variable in the form below, then click "Predict" to get the model's assessment. 
+                    This tool is for informational purposes only and should not replace professional medical advice.
                 </div>
             </div>
         </div>
