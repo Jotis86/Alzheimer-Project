@@ -1017,7 +1017,7 @@ elif choice == "🤖 Machine Learning":
                 <div class="feature-icon">🧩</div>
                 <div class="feature-text">
                     <div class="feature-title">MMSE Score</div>
-                    <div class="feature-description">Mini-Mental State Examination score (0–30). Lower scores typically indicate cognitive impairment severity.</div>
+                    <div class="feature-description">Mini-Mental State Examination score (0–30). Lower scores indicate cognitive impairment severity.</div>
                 </div>
             </div>
         </div>
