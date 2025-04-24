@@ -579,7 +579,7 @@ if choice == "🏠 Home":
 
 
 elif choice == "📊 Power BI":
-    #st.header("Power BI Dashboards")
+    st.header("Power BI Dashboards")
     
     # Introducción con estilo
     st.markdown("""
@@ -596,8 +596,8 @@ elif choice == "📊 Power BI":
     # Sección de categorías de dashboards
     st.markdown('<div class="card-title"><span class="card-title-icon">📊</span> Dashboard Categories</div>', unsafe_allow_html=True)
     
-    # Tarjetas para cada categoría
-    col1, col2 = st.columns(2)
+    # Tarjetas para cada categoría (3 columnas como en Home)
+    col1, col2, col3 = st.columns(3)
     
     with col1:
         # Tarjeta 1: Lifestyle Analysis
@@ -608,18 +608,14 @@ elif choice == "📊 Power BI":
                 <div class="feature-text">
                     <div class="feature-title">Lifestyle Analysis</div>
                     <div class="feature-description">
-                        Explore the impact of lifestyle factors such as diet, exercise, and sleep on Alzheimer's disease risk and progression.
-                        <ul style="margin-top: 10px; padding-left: 20px;">
-                            <li>Physical activity correlations</li>
-                            <li>Sleep quality metrics</li>
-                            <li>Dietary patterns analysis</li>
-                        </ul>
+                        Explore the impact of lifestyle factors on Alzheimer's disease risk and progression.
                     </div>
                 </div>
             </div>
         </div>
         """, unsafe_allow_html=True)
         
+    with col2:
         # Tarjeta 2: Medical Analysis
         st.markdown("""
         <div class="info-card">
@@ -628,11 +624,51 @@ elif choice == "📊 Power BI":
                 <div class="feature-text">
                     <div class="feature-title">Medical Analysis</div>
                     <div class="feature-description">
-                        Visualize clinical measurements and their relationship to Alzheimer's disease detection and progression.
+                        Visualize clinical measurements and their relationship to Alzheimer's detection.
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+    with col3:
+        # Tarjeta 3: Cognitive Analysis
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">🧠</div>
+                <div class="feature-text">
+                    <div class="feature-title">Cognitive Analysis</div>
+                    <div class="feature-description">
+                        Examine cognitive assessments to identify early warning signs of Alzheimer's.
+                    </div>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    # Separador decorativo
+    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+    
+    # Sección de características detalladas
+    st.markdown('<div class="card-title"><span class="card-title-icon">🔍</span> Dashboard Features</div>', unsafe_allow_html=True)
+    
+    # Características detalladas (2 columnas)
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        <div class="info-card">
+            <div class="feature-item">
+                <div class="feature-icon">📈</div>
+                <div class="feature-text">
+                    <div class="feature-title">Interactive Filters</div>
+                    <div class="feature-description">
+                        <p>Our dashboards include powerful interactive filters:</p>
                         <ul style="margin-top: 10px; padding-left: 20px;">
-                            <li>Blood pressure trends</li>
-                            <li>Cholesterol level correlations</li>
-                            <li>Medical history impact</li>
+                            <li>Filter by age, gender, and other demographics</li>
+                            <li>Slice data by different cognitive assessment scores</li>
+                            <li>Compare groups with similar characteristics</li>
                         </ul>
                     </div>
                 </div>
@@ -641,39 +677,18 @@ elif choice == "📊 Power BI":
         """, unsafe_allow_html=True)
         
     with col2:
-        # Tarjeta 3: Functional & Cognitive Analysis
         st.markdown("""
         <div class="info-card">
             <div class="feature-item">
-                <div class="feature-icon">🧠</div>
+                <div class="feature-icon">🔄</div>
                 <div class="feature-text">
-                    <div class="feature-title">Functional & Cognitive Analysis</div>
+                    <div class="feature-title">Data Exploration</div>
                     <div class="feature-description">
-                        Examine cognitive assessments and functional capacity metrics to identify early warning signs.
+                        <p>Powerful exploration capabilities:</p>
                         <ul style="margin-top: 10px; padding-left: 20px;">
-                            <li>Cognitive test score patterns</li>
-                            <li>Functional assessment trends</li>
-                            <li>Early symptom indicators</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-        
-        # Tarjeta 4: How to Use
-        st.markdown("""
-        <div class="info-card">
-            <div class="feature-item">
-                <div class="feature-icon">🔍</div>
-                <div class="feature-text">
-                    <div class="feature-title">How to Use These Dashboards</div>
-                    <div class="feature-description">
-                        <ul style="margin-top: 10px; padding-left: 20px;">
-                            <li>Click on visualizations to filter data</li>
-                            <li>Use the slicers to segment by demographics</li>
-                            <li>Hover over charts for detailed tooltips</li>
-                            <li>Download insights for your research</li>
+                            <li>Drill down into specific data points</li>
+                            <li>Explore trends over time</li>
+                            <li>Export visualizations and insights</li>
                         </ul>
                     </div>
                 </div>
@@ -684,32 +699,40 @@ elif choice == "📊 Power BI":
     # Separador decorativo
     st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
     
-    # Video y descarga
-    col1, col2 = st.columns([2, 1])
+    # Título para la sección de video
+    st.markdown('<div class="card-title"><span class="card-title-icon">🎥</span> Dashboard Preview</div>', unsafe_allow_html=True)
     
-    with col1:
-        # Vista previa del dashboard
-        st.markdown("""
-        <div class="card-title"><span class="card-title-icon">🎥</span> Dashboard Preview</div>
-        """, unsafe_allow_html=True)
-        
-        # Definir las rutas relativas dentro de la carpeta "App"
-        video = os.path.join('Power_BI', '2025-03-02 19-23-46.mp4')
-        # Reproducir el video de Power BI
-        st.video(video)
-        
+    # Video contenido en su propia tarjeta
+    st.markdown("""
+    <div class="info-card" style="margin-bottom: 30px;">
+        <p style="margin-bottom: 15px; color: #444;">
+            Watch this short video demonstration of our Power BI dashboards to see their capabilities in action:
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Reproducir el video de Power BI
+    video = os.path.join('Power_BI', '2025-03-02 19-23-46.mp4')
+    st.video(video)
+    
+    # Separador decorativo
+    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
+    
+    # Sección de descarga en su propia sección completa
+    st.markdown('<div class="card-title"><span class="card-title-icon">💾</span> Download Resources</div>', unsafe_allow_html=True)
+    
+    # Tarjeta de descarga
+    st.markdown("""
+    <div class="info-card" style="margin-bottom: 20px;">
+        <p style="margin-bottom: 15px; color: #444;">
+            Download the complete Power BI dashboard file to explore the data on your own computer. You'll need Power BI Desktop installed to open this file.
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Centrar el botón de descarga
+    col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        # Sección de descarga
-        st.markdown("""
-        <div class="card-title"><span class="card-title-icon">💾</span> Download Resources</div>
-        """, unsafe_allow_html=True)
-        
-        st.markdown("""
-        <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); margin-bottom: 20px;">
-            <p style="margin-bottom: 15px;">Download the complete Power BI dashboard file to explore the data on your own computer:</p>
-        </div>
-        """, unsafe_allow_html=True)
-        
         # Botón para descargar el archivo de Power BI
         pbix_path = os.path.join('Power_BI', 'Alzheimer_Dashboard.pbix')
         with open(pbix_path, "rb") as pbix_file:
@@ -722,15 +745,21 @@ elif choice == "📊 Power BI":
             mime='application/vnd.openxmlformats-officedocument.presentationml.presentation',
             help="Click to download the complete Power BI dashboard file"
         )
-        
-        st.markdown("""
-        <div style="background-color: rgba(27,94,32,0.1); padding: 15px; border-radius: 10px; margin-top: 20px;">
-            <p style="font-size: 14px; font-style: italic; color: #1b5e20;">
-                Note: To open this file, you'll need Power BI Desktop installed on your computer.
-                <a href="https://powerbi.microsoft.com/desktop/" target="_blank">Download Power BI Desktop here</a>.
-            </p>
+    
+    # Nota informativa en una tarjeta separada
+    st.markdown("""
+    <div class="info-card" style="background-color: rgba(27,94,32,0.1); margin-top: 20px;">
+        <div class="feature-item">
+            <div class="feature-icon">ℹ️</div>
+            <div class="feature-text">
+                <div class="feature-title">Important Note</div>
+                <div class="feature-description">
+                    To open this file, you'll need <a href="https://powerbi.microsoft.com/desktop/" target="_blank">Power BI Desktop</a> installed on your computer. The application is free and available for Windows. For Mac users, you can access similar functionality through the Power BI service online.
+                </div>
+            </div>
         </div>
-        """, unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
 
 
 
