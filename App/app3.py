@@ -2024,7 +2024,7 @@ elif choice == "📚 Other Resources":
                     <div class="feature-title">Lysine & Alzheimer's</div>
                     <div class="feature-description">
                         Scientific analysis of lysine's role in brain health and Alzheimer's disease. 
-                        Covers recent research on this essential amino acid and its effects on neurological function.
+                        Covers recent research on this amino acid and its effects on neurological function.
                     </div>
                 </div>
             </div>
