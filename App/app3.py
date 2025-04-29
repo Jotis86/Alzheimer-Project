@@ -1132,7 +1132,7 @@ elif choice == "🤖 Machine Learning":
                 <div class="feature-icon">📝</div>
                 <div class="feature-text">
                     <div class="feature-title">Functional Assessment</div>
-                    <div class="feature-description">Score ranging from 0 to 10. Lower scores indicate greater impairment in daily functions.</div>
+                    <div class="feature-description">Score ranging from 0 to 10. Lower scores indicate greater impairment in daily essential functions.</div>
                 </div>
             </div>
         </div>
