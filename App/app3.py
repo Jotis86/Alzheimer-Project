@@ -1545,7 +1545,7 @@ elif choice == "🧠 Deep Learning":
                 <div class="feature-text">
                     <div class="feature-title">Mild Demented</div>
                     <div class="feature-description">
-                        MRI scans showing early but definite signs of Alzheimer's-related neurodegeneration, including 
+                        MRI scans showing early signs of Alzheimer's-related neurodegeneration, including 
                         hippocampal atrophy, widened sulci, and some ventricular enlargement typical of early-stage Alzheimer's.
                     </div>
                 </div>
