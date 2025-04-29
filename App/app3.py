@@ -1530,8 +1530,8 @@ elif choice == "🧠 Deep Learning":
                 <div class="feature-text">
                     <div class="feature-title">Very Mild Demented</div>
                     <div class="feature-description">
-                        Brain scans showing very early signs of neurodegeneration that may be difficult to detect visually. 
-                        These subtle changes may include minor hippocampal atrophy and early ventricular enlargement.
+                        Brain scans showing early signs of neurodegeneration that may be difficult to detect visually. 
+                        These changes may include minor hippocampal atrophy and early ventricular enlargement.
                     </div>
                 </div>
             </div>
