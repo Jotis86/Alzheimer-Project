@@ -813,7 +813,7 @@ elif choice == "📊 Power BI":
                 <div class="feature-icon">🩺</div>
                 <div class="feature-text">
                     <div class="feature-title">Medical Analysis</div>
-                    <div class="feature-description">Visualize clinical measurements and their relationship to Alzheimer's detection.</div>
+                    <div class="feature-description">Visualize clinical measurements and their relationship to Alzheimer's.</div>
                 </div>
             </div>
         </div>
